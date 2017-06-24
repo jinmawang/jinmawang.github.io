@@ -1839,13 +1839,9 @@ if ($(elem).is(&quot;:checked&quot;))
     </entry>
     
     <entry>
-      <title><![CDATA[jquery中on和bind的区别]]></title>
-      <url>/2016/06/23/on_bind/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>bind()函数是jQuery 1.7之前或更早版本采用的一个用来绑定事件处理程序的函数；on()函数是jQuery 1.7版本提供的首选的用来绑定事件处理程序的函数；从1.7版本的介绍以及参数描述来看，其实这两个函数基本上用法一致，但可能在早期的版本中，bind()函数一次只能为标签对象绑定一个事件的处理程序，而on()函数则可以一次为多个不同的事件绑定处理程序。</p>
-</blockquote>
-<p>delegate()采用事件委托的概念，这样可以不用再为一个大盒子里面的所有子盒子绑定事件， 当在大盒子内任意元素上点击时，事件会一层层从event target向上冒泡，直至到达你为其绑定事件的元素。冒泡的过程中，如果事件的currentTarget与选择器匹配时，就会执行代码。 也可以为动态添加进大盒子的子元素绑定事件。</p>
-<p>on()方法综合了bind()和delegate()方法。尽量使用on()方法。</p>
+      <title><![CDATA[$(this).index()]]></title>
+      <url>/2016/06/23/$_index/</url>
+      <content type="html"><![CDATA[<p>$(this).index()获取的是该元素在<strong>兄弟元素</strong>中的索引    </p>
 ]]></content>
       
         <categories>
@@ -1864,9 +1860,13 @@ if ($(elem).is(&quot;:checked&quot;))
     </entry>
     
     <entry>
-      <title><![CDATA[$(this).index()]]></title>
-      <url>/2016/06/23/$_index/</url>
-      <content type="html"><![CDATA[<p>$(this).index()获取的是该元素在<strong>兄弟元素</strong>中的索引    </p>
+      <title><![CDATA[jquery中on和bind的区别]]></title>
+      <url>/2016/06/23/on_bind/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>bind()函数是jQuery 1.7之前或更早版本采用的一个用来绑定事件处理程序的函数；on()函数是jQuery 1.7版本提供的首选的用来绑定事件处理程序的函数；从1.7版本的介绍以及参数描述来看，其实这两个函数基本上用法一致，但可能在早期的版本中，bind()函数一次只能为标签对象绑定一个事件的处理程序，而on()函数则可以一次为多个不同的事件绑定处理程序。</p>
+</blockquote>
+<p>delegate()采用事件委托的概念，这样可以不用再为一个大盒子里面的所有子盒子绑定事件， 当在大盒子内任意元素上点击时，事件会一层层从event target向上冒泡，直至到达你为其绑定事件的元素。冒泡的过程中，如果事件的currentTarget与选择器匹配时，就会执行代码。 也可以为动态添加进大盒子的子元素绑定事件。</p>
+<p>on()方法综合了bind()和delegate()方法。尽量使用on()方法。</p>
 ]]></content>
       
         <categories>
