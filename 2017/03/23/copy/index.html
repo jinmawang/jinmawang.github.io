@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 风中劲草</title>
+  <title>关于页面中的复制/剪切到剪切板功能 | 风中劲草</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="最近遇到一个需求，在页面上点击某按钮实现复制到剪切板功能，实现这一目的要比它本身看起来难得多。甚至可以说，就目前而言，没有一个通用的方法可以实现，我们能做的只有妥协。在FLASH 9 时代，有一个通杀所有浏览器的js复制内容到剪贴板的方案，也就是著名的Clipboard Copy解决方案 ，诸如zeroclipboard.js.利用一个clipboard.swf作为桥梁，复制内容到剪贴板。彼时浏">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/06/24/hello-world/index.html">
+<meta property="og:title" content="关于页面中的复制&#x2F;剪切到剪切板功能">
+<meta property="og:url" content="http://yoursite.com/2017/03/23/copy/index.html">
 <meta property="og:site_name" content="风中劲草">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-06-24T07:26:20.000Z">
+<meta property="og:description" content="最近遇到一个需求，在页面上点击某按钮实现复制到剪切板功能，实现这一目的要比它本身看起来难得多。甚至可以说，就目前而言，没有一个通用的方法可以实现，我们能做的只有妥协。在FLASH 9 时代，有一个通杀所有浏览器的js复制内容到剪贴板的方案，也就是著名的Clipboard Copy解决方案 ，诸如zeroclipboard.js.利用一个clipboard.swf作为桥梁，复制内容到剪贴板。彼时浏">
+<meta property="og:updated_time" content="2017-06-24T06:16:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="关于页面中的复制&#x2F;剪切到剪切板功能">
+<meta name="twitter:description" content="最近遇到一个需求，在页面上点击某按钮实现复制到剪切板功能，实现这一目的要比它本身看起来难得多。甚至可以说，就目前而言，没有一个通用的方法可以实现，我们能做的只有妥协。在FLASH 9 时代，有一个通杀所有浏览器的js复制内容到剪贴板的方案，也就是著名的Clipboard Copy解决方案 ，诸如zeroclipboard.js.利用一个clipboard.swf作为桥梁，复制内容到剪贴板。彼时浏">
   
     <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
   
@@ -67,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-copy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/24/hello-world/" class="article-date">
-  <time datetime="2017-06-24T07:26:20.000Z" itemprop="datePublished">2017-06-24</time>
+    <a href="/2017/03/23/copy/" class="article-date">
+  <time datetime="2017-03-23T08:12:45.000Z" itemprop="datePublished">2017-03-23</time>
 </a>
     
   </div>
@@ -81,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      关于页面中的复制/剪切到剪切板功能
     </h1>
   
 
@@ -89,32 +90,102 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <blockquote>
+<p>最近遇到一个需求，在页面上点击某按钮实现复制到剪切板功能，实现这一目的要比它本身看起来难得多。甚至可以说，就目前而言，没有一个通用的方法可以实现，我们能做的只有妥协。在FLASH 9 时代，有一个通杀所有浏览器的js复制内容到剪贴板的方案，也就是著名的Clipboard Copy解决方案 ，诸如zeroclipboard.js.利用一个clipboard.swf作为桥梁，复制内容到剪贴板。彼时浏览器Flash的安装率非常高，这几乎是一个完美的解决方案。然而，随着flash的落幕，这种方案现在已经被淘汰了。这里我们主要说下目前最有效的解决方案，clipboard.js.</p>
+</blockquote>
+<p> <a href="https://clipboardjs.com/" target="_blank" rel="external">clipboard.js </a>使用纯 JavaScript （无需 Flash）实现了复制浏览器内容到系统剪切板的功能，可以在浏览器和 Node 环境中使用。pc端支持的浏览器如下，Chrome 42+、Firefox 41+、IE 9+、Opera 29+。而移动端就没这么丰富了，iOS10以上支持，安卓手机上仅支持部分浏览器，下面是部分手机的统计情况：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">手机\浏览器</th>
+<th style="text-align:left">自带浏览器</th>
+<th style="text-align:right">微信浏览器</th>
+<th style="text-align:center">UC浏览器</th>
+<th style="text-align:center">QQ浏览器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">小米5</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:right">支持</td>
+<td style="text-align:center">不支持</td>
+<td style="text-align:center">不支持</td>
+</tr>
+<tr>
+<td style="text-align:left">oppo r9</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:right">支持</td>
+<td style="text-align:center">不支持</td>
+<td style="text-align:center">不支持</td>
+</tr>
+<tr>
+<td style="text-align:left">华为荣耀6</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:right">支持</td>
+<td style="text-align:center">不支持</td>
+<td style="text-align:center">不支持</td>
+</tr>
+<tr>
+<td style="text-align:left">iphone6(iOS10.3)</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:right">支持</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">支持</td>
+</tr>
+<tr>
+<td style="text-align:left">iphone5s(iOS9.2)</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:right">不支持</td>
+<td style="text-align:center">不支持</td>
+<td style="text-align:center">不支持</td>
+</tr>
+</tbody>
+</table>
+<p>好在clipboard.js提供了Clipboard.isSupported()方法来检查浏览器的支持情况。代码如下：</p>
+<pre><code>&lt;input id=&quot;foo&quot; value=&quot;123456&quot;&gt;
+&lt;button class=&quot;btn&quot; id=&quot;btn&quot; data-clipboard- target=&quot;#foo&quot; data-clipboard-action=&quot;copy&quot;&gt;复制&lt;/button&gt;
+&lt;script src=&quot;clipboard.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var btn = document.getElementById(&apos;btn&apos;);
+    var clipboard = new Clipboard(btn);
+    if(Clipboard.isSupported()) { //支持复制
+        clipboard.on(&quot;success&quot;,function(){
+            alert(&quot;复制成功&quot;);
+        });
+    }else {
+        alert(&quot;您的浏览器不支持，请手动复制&quot;);//或在这里隐藏复制按钮
+    }
 
+&lt;/script&gt;
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/24/hello-world/" data-id="cj4aza1nu000lj2s6np8ek43f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/23/copy/" data-id="cj4aza1nm000ej2s6fac7x0yx" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
+    <a href="/2017/04/25/vue2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          vue2.0笔记
+        
+      </div>
+    </a>
   
-    <a href="/2017/06/18/jq_react_vue/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2017/03/15/slider_plugin/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">jquery与vue、react的区别</div>
+      <div class="article-nav-title">标准轮播图插件</div>
     </a>
   
 </nav>

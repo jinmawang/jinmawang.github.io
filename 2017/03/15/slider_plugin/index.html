@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>标准轮播图插件 | 风中劲草</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="pc端普通标准轮播图插件，带导航按钮，小圆点，自动轮播  1.html部分&amp;lt;div class=&amp;quot;slider-container&amp;quot;&amp;gt;  &amp;lt;/div&amp;gt; 2.css部分 html ,body,ul {     margin: 0;     padding: 0; } .slider-container ul li {     list-style-typ">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="标准轮播图插件">
+<meta property="og:url" content="http://yoursite.com/2017/03/15/slider_plugin/index.html">
+<meta property="og:site_name" content="风中劲草">
+<meta property="og:description" content="pc端普通标准轮播图插件，带导航按钮，小圆点，自动轮播  1.html部分&amp;lt;div class=&amp;quot;slider-container&amp;quot;&amp;gt;  &amp;lt;/div&amp;gt; 2.css部分 html ,body,ul {     margin: 0;     padding: 0; } .slider-container ul li {     list-style-typ">
+<meta property="og:updated_time" content="2017-06-24T06:20:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="标准轮播图插件">
+<meta name="twitter:description" content="pc端普通标准轮播图插件，带导航按钮，小圆点，自动轮播  1.html部分&amp;lt;div class=&amp;quot;slider-container&amp;quot;&amp;gt;  &amp;lt;/div&amp;gt; 2.css部分 html ,body,ul {     margin: 0;     padding: 0; } .slider-container ul li {     list-style-typ">
+  
+    <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">风中劲草</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">哈哈哈哈哈</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-slider_plugin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/15/slider_plugin/" class="article-date">
+  <time datetime="2017-03-15T05:32:06.000Z" itemprop="datePublished">2017-03-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      标准轮播图插件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>pc端普通标准轮播图插件，带导航按钮，小圆点，自动轮播</p>
+</blockquote>
+<h5 id="1-html部分"><a href="#1-html部分" class="headerlink" title="1.html部分"></a>1.html部分</h5><pre><code>&lt;div class=&quot;slider-container&quot;&gt;
+
+&lt;/div&gt;
+</code></pre><h5 id="2-css部分"><a href="#2-css部分" class="headerlink" title="2.css部分"></a>2.css部分</h5><pre><code> html ,body,ul {
+    margin: 0;
+    padding: 0;
+}
+.slider-container ul li {
+    list-style-type: none;
+
+}
+.clearfix:after {
+    content:&quot;&quot;;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;/*兼容ie浏览器*/
+}
+.slider-container {
+    width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.slider-body  {
+    width: 5000px;
+    position: relative;
+}
+.slider-body  li {
+
+    float: left;
+}
+.slider-body li img {
+    width: 500px;
+    height: 300px;
+}
+
+.slider-container a {
+    display: block;
+}
+.slider-container .button {
+    width: 54px;
+    height: 84px;
+    position: absolute;
+    top: 50%;
+    margin-top: -42px;
+}
+.slider-container .prev {
+    background: url(&quot;images/n_01.png&quot;) 0px 0px no-repeat;
+
+}
+.slider-container .next {
+    background: url(&quot;images/n_01.png&quot;) -54px 0px no-repeat;
+    right: 0;
+}
+.slider-points {
+    position:absolute;
+    bottom: 20px;
+    left: 50%;
+}
+.slider-points li{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    background: #fff;
+    cursor: pointer;
+    opacity: .6;
+    float: left;
+
+}
+.slider-points .current {
+    background: red;
+}
+</code></pre><h5 id="3-js部分"><a href="#3-js部分" class="headerlink" title="3. js部分"></a>3. js部分</h5><pre><code>/*
+ * pc 轮播图插件 基于jquery
+ *  调用方式 $(&quot;.slider-container&quot;).jSlider(obj);
+ *  传入一个对象obj 包含轮播图的图片地址数组imgUrlArr
+ *  对象中可选参数 animateMilliSeconds  动画的过渡时间 毫秒计
+ *  intervalMilliSeconds 定时器的间隔时间 毫秒计
+ */
+function jSlider(ele,opt) {
+    this.$dom = $(ele);
+    this.defaults = {
+        animateMilliSeconds:300,
+        intervalMilliSeconds:2000
+    };
+    this.options = $.extend({},this.defaults,opt);//注意这一步
+    this.imgUrlArr = this.options.imgUrlArr;
+    this.length = this.options.imgUrlArr.length;
+    this.animateMilliSeconds = this.options.animateMilliSeconds;
+    this.intervalMilliSeconds = this.options.intervalMilliSeconds;
+    this.index = 0;
+}
+
+//轮播图初始化
+jSlider.prototype.init = function() {
+    this.create();
+    this.$slideBox = $(&quot;.slider-body&quot;);
+    this.liWidth = $(&quot;.slider-body  li&quot;).width();
+    this.go();
+    this.bindEvents();
+};
+//创建并添加元素
+jSlider.prototype.create = function() {
+    var slidercContainerStr = &apos;&apos;,
+            sliderBodyStr = &apos;&apos;,
+            sliderPointsStr = &apos;&apos;;
+    for(var i = 0,l = this.length;i &lt; l;i ++) {
+        sliderBodyStr += &apos;&lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;&lt;img src=&quot;&apos;+this.imgUrlArr[i]+&apos;&quot; alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;&apos;
+        sliderPointsStr += &apos;&lt;li&gt;&lt;/li&gt;&apos;;
+    }
+    sliderBodyStr += &apos;&lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;&lt;img src=&quot;&apos;+this.imgUrlArr[0]+&apos;&quot; alt=&quot;&quot;/&gt;&lt;/a&gt;&lt;/li&gt;&apos;
+    slidercContainerStr += &apos;&lt;ul class=&quot;clearfix slider-body&quot;&gt;&apos;;
+    slidercContainerStr +=  sliderBodyStr;
+    slidercContainerStr += &apos;&lt;/ul&gt;&apos;;
+    slidercContainerStr += &apos;&lt;a class=&quot;button prev &quot; href=&quot;javascript:;&quot;&gt;&lt;/a&gt;&apos;;
+    slidercContainerStr += &apos;&lt;a class=&quot;button next&quot; href=&quot;javascript:;&quot;&gt;&lt;/a&gt;&apos;;
+    slidercContainerStr += &apos;&lt;ul class=&quot;slider-points clearfix&quot;&gt;&apos;;
+    slidercContainerStr += sliderPointsStr;
+    slidercContainerStr += &apos;&lt;/ul&gt;&apos;;
+    this.$dom.html(slidercContainerStr);
+    $(&quot;.slider-points li&quot;).eq(0).addClass(&quot;current&quot;);
+    //小圆点盒子居中
+    $(&quot;.slider-points&quot;).css(&quot;margin-left&quot;,$(&quot;.slider-points&quot;).width()/-2+&quot;px&quot;);
+
+};
+//基本动画
+jSlider.prototype.animation = function() {
+    this.$slideBox.stop().animate({
+        &quot;left&quot;:-this.liWidth*this.index+&quot;px&quot;
+    },this.animateMilliSeconds);
+    $(&quot;.slider-points li&quot;).eq(this.index).addClass(&quot;current&quot;).siblings().removeClass(&quot;current&quot;);
+};
+//下一个
+jSlider.prototype.next = function() {
+    this.index++;
+    if(this.index == this.length) {
+        $(&quot;.slider-points li&quot;).eq(0).addClass(&quot;current&quot;).siblings().removeClass(&quot;current&quot;);
+
+    }else if(this.index == this.length+1) {//最后一张图和第一张图是一样的
+        this.index = 1;
+        this.$slideBox.css( &quot;left&quot;,&quot;0&quot;);
+    }
+    this.animation();
+};
+//上一个
+jSlider.prototype.prev = function() {
+    this.index-- ;
+    if(this.index == -1) {
+        this.index = this.length-1;
+        this.$slideBox.css( &quot;left&quot;,-this.liWidth*this.length+&quot;px&quot;);
+    }
+    this.animation();
+};
+//动画开始  开启定时器
+jSlider.prototype.go = function() {
+    var _this = this;
+    this.sliderTimer = setInterval(function(){
+        _this.next();
+    },this.intervalMilliSeconds);
+};
+//动画停止
+jSlider.prototype.stop = function() {
+    clearInterval(this.sliderTimer);
+};
+//绑定事件
+jSlider.prototype.bindEvents = function() {
+    var _this = this;
+    //点击左右按钮功能
+    $(&quot;.slider-container &quot;).on(&quot;click&quot;,&quot;.next&quot;,function(){
+        _this.next();
+
+    });
+    $(&quot;.slider-container &quot;).on(&quot;click&quot;,&quot;.prev&quot;,function(){
+        _this.prev();
+    });
+    //鼠标移上定时器停止
+    $(&quot;.slider-container&quot;).on(&quot;mouseover&quot;,function(){
+        _this.stop();
+    });
+    $(&quot;.slider-container&quot;).on(&quot;mouseout&quot;,function(event){
+        _this.go();
+    });
+    //点击slider下面的小圆点切换图片功能
+    $(&quot;.slider-container &quot;).on(&quot;click&quot;,&quot;.slider-points li&quot;,function(){
+        $(&quot;.slider-points  li&quot;).eq($(this).index()).addClass(&quot;current&quot;).siblings().removeClass(&quot;current&quot;);
+        _this.$slideBox.stop().animate({left:-_this.liWidth*$(this).index()},_this.animateMilliSeconds);
+        _this.index =$(this).index();
+    });
+};
+
+//扩展jQuery的命名空间 （jQuery.fn = jQuery.prototype）
+//这样每个jQuery实例都可以调用我们自己的插件
+$.fn.jSlider = function (opt) {
+     new jSlider(this,opt).init();
+};
+</code></pre><h5 id="4-调用方法"><a href="#4-调用方法" class="headerlink" title="4.调用方法"></a>4.调用方法</h5><pre><code>var obj = {
+    imgUrlArr:[
+        &quot;images/oushi05.jpg&quot;,
+        &quot;images/oushi06.jpg&quot;,
+        &quot;images/oushi09.jpg&quot;,
+        &quot;images/10.jpg&quot;,
+    ],
+    animateMilliSeconds:400
+};
+$(&quot;.slider-container&quot;).jSlider(obj);
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/15/slider_plugin/" data-id="cj4aza1om0016j2s6c06dy0j1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/23/copy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          关于页面中的复制/剪切到剪切板功能
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/13/loading_plugin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">简易loading插件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE8/">IE8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-jQuery/">JavaScript jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-vue-react/">jquery vue react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IE8/" style="font-size: 10px;">IE8</a> <a href="/tags/JavaScript-jQuery/" style="font-size: 10px;">JavaScript jQuery</a> <a href="/tags/css/" style="font-size: 13.33px;">css</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 16.67px;">jquery</a> <a href="/tags/jquery-vue-react/" style="font-size: 10px;">jquery vue react</a> <a href="/tags/vue/" style="font-size: 13.33px;">vue</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/移动端/" style="font-size: 13.33px;">移动端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/24/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/18/jq_react_vue/">jquery与vue、react的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/28/decimalpx/">小数像素问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/vue2_vue1/">vue2.0与1.0比较</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/vue2/">vue2.0笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Jawesome<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/6 | 风中劲草</title>
+  <title>audio音频在移动端无法自动播放的问题 | 风中劲草</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="风中劲草">
-<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
+  <meta name="description" content="audio音频设置了自动播放，但是在ios的微信和safari下还是无法自动播放，无论是用h5的audio的标签还是用createjs里的soundjs库都无法解决。处理办法一般是 设置自动播放属性，同时也监听触摸事件，因为是手机，所以人们会情不自禁的触摸屏幕，从而播放音乐，造成是自动播放的假象，提高了用户体验。 ```document.addEventListener(‘touchstart’,">
+<meta name="keywords" content="移动端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="audio音频在移动端无法自动播放的问题">
+<meta property="og:url" content="http://yoursite.com/2016/12/12/audio/index.html">
 <meta property="og:site_name" content="风中劲草">
+<meta property="og:description" content="audio音频设置了自动播放，但是在ios的微信和safari下还是无法自动播放，无论是用h5的audio的标签还是用createjs里的soundjs库都无法解决。处理办法一般是 设置自动播放属性，同时也监听触摸事件，因为是手机，所以人们会情不自禁的触摸屏幕，从而播放音乐，造成是自动播放的假象，提高了用户体验。 ```document.addEventListener(‘touchstart’,">
+<meta property="og:updated_time" content="2017-06-24T06:16:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风中劲草">
+<meta name="twitter:title" content="audio音频在移动端无法自动播放的问题">
+<meta name="twitter:description" content="audio音频设置了自动播放，但是在ios的微信和safari下还是无法自动播放，无论是用h5的audio的标签还是用createjs里的soundjs库都无法解决。处理办法一般是 设置自动播放属性，同时也监听触摸事件，因为是手机，所以人们会情不自禁的触摸屏幕，从而播放音乐，造成是自动播放的假象，提高了用户体验。 ```document.addEventListener(‘touchstart’,">
   
     <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
   
@@ -63,58 +68,76 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/24/hello-world/" class="archive-article-date">
-  <time datetime="2017-06-24T07:26:20.000Z" itemprop="datePublished">Jun 24</time>
+        <section id="main"><article id="post-audio" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/12/audio/" class="article-date">
+  <time datetime="2016-12-12T06:22:13.000Z" itemprop="datePublished">2016-12-12</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/24/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      audio音频在移动端无法自动播放的问题
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/18/jq_react_vue/" class="archive-article-date">
-  <time datetime="2017-06-18T06:29:23.000Z" itemprop="datePublished">Jun 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/jq_react_vue/">jquery与vue、react的区别</a>
-    </h1>
-  
+        <p>audio音频设置了自动播放，但是在ios的微信和safari下还是无法自动播放，无论是用h5的audio的标签还是用createjs里的soundjs库都无法解决。处理办法一般是 设置自动播放属性，同时也监听触摸事件，因为是手机，所以人们会情不自禁的触摸屏幕，从而播放音乐，造成是自动播放的假象，提高了用户体验。</p>
+<p>```<br>document.addEventListener(‘touchstart’, function(){<br>   audio.play();<br>}, false);</p>
+<p>为了节省用户的流量，安卓跟ios都默认不允许开发者进行自动播放，除非用户进行页面操作，比较常用的方法，是在用户进行操作的时候，使用touch事件，控制音乐进行播放。如果在页面在微信中发布的话，可以用以下的方法尝试以下：</p>
+<pre><code>&lt;audio style=&quot;display:none; height: 0&quot; id=&quot;bg-music&quot; preload=&quot;auto&quot; src=&quot;../static/videos/bg-music.mp3&quot; loop=&quot;loop&quot;&gt;&lt;/audio&gt;
 
-    </header>
+
+document.addEventListener(&apos;DOMContentLoaded&apos;, function(){           function audioAutoPlay() {       
+ var audio = document.getElementById(&apos;bg-music&apos;);           
+ audio.play();        document.addEventListener(&quot;WeixinJSBridgeReady&quot;, function () {                audio.play();        
+ }, false);   
+  }    
+ audioAutoPlay();
+ });
+</code></pre><p>监听DOMContentLoaded和load事件，实测在iPhone6s(ios10)、iPhone 6plus(ios8)中能顺利自动播放，没有测试全部iPhone的机型，估计iPhone是没问题的，安卓估计还是有部分不行，但是大部分机型能播放。我是讲上面两种方法结合起来，用户触摸的时候让音乐播放，监听微信的也播放，这是我能找到的比较完美的解决方案了，如果有更好的解决方案，欢迎提供交流。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/12/audio/" data-id="cj4aza1nd000aj2s6s4yv73jx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/08/git_qianduan/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端 Git 工作流(le)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/05/jq_bgimage/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">用jquery获取背景图片的路径的兼容问题</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

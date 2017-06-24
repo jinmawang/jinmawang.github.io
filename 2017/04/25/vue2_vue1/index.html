@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/6 | 风中劲草</title>
+  <title>vue2.0与1.0比较 | 风中劲草</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="风中劲草">
-<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
+  <meta name="description" content="vue2.0:    bower info vue http://vuejs.org/ 到了2.0以后，有哪些变化?  在每个组件模板，不在支持片段代码 组件中模板:之前:     &amp;lt;template&amp;gt;         &amp;lt;h3&amp;gt;我是组件&amp;lt;/h3&amp;gt;&amp;lt;strong&amp;gt;我是加粗标签&amp;lt;/strong&amp;gt;     &amp;lt;/template&amp;gt; 现">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue2.0与1.0比较">
+<meta property="og:url" content="http://yoursite.com/2017/04/25/vue2_vue1/index.html">
 <meta property="og:site_name" content="风中劲草">
+<meta property="og:description" content="vue2.0:    bower info vue http://vuejs.org/ 到了2.0以后，有哪些变化?  在每个组件模板，不在支持片段代码 组件中模板:之前:     &amp;lt;template&amp;gt;         &amp;lt;h3&amp;gt;我是组件&amp;lt;/h3&amp;gt;&amp;lt;strong&amp;gt;我是加粗标签&amp;lt;/strong&amp;gt;     &amp;lt;/template&amp;gt; 现">
+<meta property="og:updated_time" content="2017-06-24T06:21:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风中劲草">
+<meta name="twitter:title" content="vue2.0与1.0比较">
+<meta name="twitter:description" content="vue2.0:    bower info vue http://vuejs.org/ 到了2.0以后，有哪些变化?  在每个组件模板，不在支持片段代码 组件中模板:之前:     &amp;lt;template&amp;gt;         &amp;lt;h3&amp;gt;我是组件&amp;lt;/h3&amp;gt;&amp;lt;strong&amp;gt;我是加粗标签&amp;lt;/strong&amp;gt;     &amp;lt;/template&amp;gt; 现">
   
     <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
   
@@ -63,58 +68,160 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/24/hello-world/" class="archive-article-date">
-  <time datetime="2017-06-24T07:26:20.000Z" itemprop="datePublished">Jun 24</time>
+        <section id="main"><article id="post-vue2_vue1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/25/vue2_vue1/" class="article-date">
+  <time datetime="2017-04-25T08:35:55.000Z" itemprop="datePublished">2017-04-25</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/24/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      vue2.0与1.0比较
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/18/jq_react_vue/" class="archive-article-date">
-  <time datetime="2017-06-18T06:29:23.000Z" itemprop="datePublished">Jun 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/jq_react_vue/">jquery与vue、react的区别</a>
-    </h1>
-  
+        <p>vue2.0:<br>    bower info vue</p>
+<pre><code>http://vuejs.org/
+</code></pre><p>到了2.0以后，有哪些变化?</p>
+<ol>
+<li>在每个组件模板，不在支持片段代码<br> 组件中模板:<pre><code>之前:
+    &lt;template&gt;
+        &lt;h3&gt;我是组件&lt;/h3&gt;&lt;strong&gt;我是加粗标签&lt;/strong&gt;
+    &lt;/template&gt;
+现在:  必须有根元素，包裹住所有的代码
+    &lt;template id=&quot;aaa&quot;&gt;
+            &lt;div&gt;
+                &lt;h3&gt;我是组件&lt;/h3&gt;
+                &lt;strong&gt;我是加粗标签&lt;/strong&gt;
+            &lt;/div&gt;
+    &lt;/template&gt;
+</code></pre></li>
+<li><p>关于组件定义<br> Vue.extend    这种方式，在2.0里面有，但是有一些改动，这种写法，即使能用，咱也不用——废弃</p>
+<p> Vue.component(组件名称,{    在2.0继续能用</p>
+<pre><code>data(){}
+methods:{}
+template:
+</code></pre><p> });</p>
+<p> 2.0推出一个组件，简洁定义方式：<br> var Home={</p>
+<pre><code>template:&apos;&apos;        -&gt;   Vue.extend()
+</code></pre><p> };</p>
+</li>
+<li>生命周期<br> 之前:<pre><code>init    
+created
+beforeCompile
+compiled
+ready        √    -&gt;     mounted
+beforeDestroy    
+destroyed
+</code></pre> 现在:<pre><code>beforeCreate    组件实例刚刚被创建,属性都没有
+created    实例已经创建完成，属性已经绑定
+beforeMount    模板编译之前
+mounted    模板编译之后，代替之前ready  *
+beforeUpdate    组件更新之前
+updated    组件更新完毕    *
+beforeDestroy    组件销毁前
+destroyed    组件销毁后
+</code></pre></li>
+<li><p>循环<br>1.0默认不可以添加重复数据 需要加上track-by = “$index”<br> 2.0里面默认就可以添加重复数据</p>
+<p> arr.forEach(function(item,index){</p>
+<p> });</p>
+<p> 去掉了隐式一些变量</p>
+<pre><code>$index    $key
+</code></pre><p> 之前:</p>
+<pre><code>v-for=&quot;(index,val) in array&quot;
+</code></pre><p> 现在:</p>
+<pre><code>v-for=&quot;(val,index) in array&quot;
+</code></pre></li>
+</ol>
+<ol>
+<li>track-by=”id”<br> 变成<pre><code>&lt;li v-for=&quot;(val,index) in list&quot; :key=&quot;index&quot;&gt;
+</code></pre></li>
+<li><p>自定义键盘指令<br> 之前：Vue.directive(‘on’).keyCodes.f1=17;    </p>
+<p> 现在:  Vue.config.keyCodes.ctrl=17</p>
+</li>
+<li><p>过滤器<br> 之前:</p>
+<pre><code>系统就自带很多过滤
+{{msg | currency}}
+{{msg | json}}
+....
+limitBy
+filterBy
+.....
+</code></pre><p> 一些简单功能，自己通过js实现</p>
+<p> 到了2.0， 内置过滤器，全部删除了</p>
+</li>
+</ol>
+<pre><code>lodash    工具库    _.debounce(fn,200)
 
-    </header>
+
+自定义过滤器——还有
+    但是,自定义过滤器传参
+
+    之前:    {{msg | toDou '12' '5'}}
+    现在:     {{msg | toDou('12','5')}}
+</code></pre><p>组件通信:<br>    vm.$emit()<br>    vm.$on();</p>
+<pre><code>父组件和子组件:
+
+子组件想要拿到父组件数据:
+    通过  props
+
+之前，子组件可以更改父组件信息，可以是同步  sync
+现在，不允许直接给父级的数据，做赋值操作
+
+问题，就想更改：
+    a). 父组件每次传一个对象给子组件, 对象之间引用    √
+    b). 只是不报错, mounted中转
+</code></pre><p>可以单一事件管理组件通信:    vuex<br>    var Event=new Vue();</p>
+<pre><code>Event.$emit(事件名称, 数据)
+
+Event.$on(事件名称,function(data){
+    //data
+}.bind(this));
+</code></pre><p>debounce    废弃<br>    -&gt;   lodash<br>        _.debounce(fn,时间)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/25/vue2_vue1/" data-id="cj4aza1ov001bj2s6ija4o8dk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/28/decimalpx/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          小数像素问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/25/vue2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue2.0笔记</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

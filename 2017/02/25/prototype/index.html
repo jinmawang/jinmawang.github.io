@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/6 | 风中劲草</title>
+  <title>关于原型链上的一些总结 | 风中劲草</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="风中劲草">
-<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
+  <meta name="description" content="假设a是一个对象  a.name = “jack” ；一个点相当于在这个对象a上操作，如果有name属性则直接赋值， 如果没有name属性则先创建再赋值 a.info.name = ‘jack’；两个点相当于先访问a对象上的info属性(这个info对象可以是a对象本身上的，也可以是a对象的原型对象上的)再在其上创建或修改name属性   case 1:var fun = function(){">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于原型链上的一些总结">
+<meta property="og:url" content="http://yoursite.com/2017/02/25/prototype/index.html">
 <meta property="og:site_name" content="风中劲草">
+<meta property="og:description" content="假设a是一个对象  a.name = “jack” ；一个点相当于在这个对象a上操作，如果有name属性则直接赋值， 如果没有name属性则先创建再赋值 a.info.name = ‘jack’；两个点相当于先访问a对象上的info属性(这个info对象可以是a对象本身上的，也可以是a对象的原型对象上的)再在其上创建或修改name属性   case 1:var fun = function(){">
+<meta property="og:updated_time" content="2017-06-24T06:19:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风中劲草">
+<meta name="twitter:title" content="关于原型链上的一些总结">
+<meta name="twitter:description" content="假设a是一个对象  a.name = “jack” ；一个点相当于在这个对象a上操作，如果有name属性则直接赋值， 如果没有name属性则先创建再赋值 a.info.name = ‘jack’；两个点相当于先访问a对象上的info属性(这个info对象可以是a对象本身上的，也可以是a对象的原型对象上的)再在其上创建或修改name属性   case 1:var fun = function(){">
   
     <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
   
@@ -63,58 +68,143 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/24/hello-world/" class="archive-article-date">
-  <time datetime="2017-06-24T07:26:20.000Z" itemprop="datePublished">Jun 24</time>
+        <section id="main"><article id="post-prototype" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/25/prototype/" class="article-date">
+  <time datetime="2017-02-25T07:02:06.000Z" itemprop="datePublished">2017-02-25</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/24/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      关于原型链上的一些总结
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/18/jq_react_vue/" class="archive-article-date">
-  <time datetime="2017-06-18T06:29:23.000Z" itemprop="datePublished">Jun 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/jq_react_vue/">jquery与vue、react的区别</a>
-    </h1>
-  
+        <blockquote>
+<p>假设a是一个对象</p>
+<ol>
+<li>a.name = “jack” ；<br>一个点相当于在这个对象a上操作，如果有name属性则直接赋值， 如果没有name属性则先创建再赋值</li>
+<li>a.info.name = ‘jack’；<br>两个点相当于先访问a对象上的info属性(这个info对象可以是a对象本身上的，也可以是a对象的原型对象上的)再在其上创建或修改name属性</li>
+</ol>
+</blockquote>
+<h4 id="case-1"><a href="#case-1" class="headerlink" title="case 1:"></a>case 1:</h4><pre><code>var fun = function(){};
+fun.prototype = {
+    name:&apos;黑马&apos;,
+    sum:100,
+};
+var a = new fun();
+var b = new fun();
+console.log( a.name);//黑马  直接访问a对象的name属性
+console.log( b.name);//黑马  直接访问b对象的name属性    
+</code></pre><h4 id="case-2"><a href="#case-2" class="headerlink" title="case 2:"></a>case 2:</h4><pre><code>var fun = function(){};
+fun.prototype = {
+    name:&apos;黑马&apos;,
+    sum:100,
+};
+var a = new fun();
+var b = new fun();
+a.name = &apos;黑马王子&apos;;//一个点相当于在这个对象上创建一个属性并赋值
+b.name=&apos;白马王子&apos;;
+console.log(a);
+console.log(b);
+console.log( a.name);//黑马王子
+console.log( b.name);//白马王子    
+</code></pre><h4 id="case-3"><a href="#case-3" class="headerlink" title="case 3:"></a>case 3:</h4><pre><code>var fun = function(){
+    this.info = {
+        name: &quot;hh&quot;
+    }
+};
+fun.prototype = {
+    name:&apos;1&apos;,
+    info : {
+        name : &apos;peter&apos;,
+        age : 25
+    }
+};
+var a = new fun();
+var b = new fun();
+a.info.name = &apos;jack&apos;;
+b.info.name = &apos;tom&apos;; //访问了b对象本身的info属性(对象)，并修改info上的name属性的属性值
+console.log(a);
+console.log(b);
+console.log(a.info.name);//jack
+console.log(b.info.name);//tom
+</code></pre><h4 id="case-4"><a href="#case-4" class="headerlink" title="case 4:"></a>case 4:</h4><pre><code>var fun = function(){};
+fun.prototype = {
+    name:&apos;1&apos;,
+    info : {
+        name : &apos;peter&apos;,
+        age : 25
+    }
+};
+var a = new fun();
+var b = new fun();
+a.info.name = &apos;jack&apos;;
+b.info.name = &apos;tom&apos;; //访问了b对象的原型对象上的info属性(对象)，并修改info上的name属性的属性值
+console.log(a);
+console.log(b);
+console.log(a.info.name);//tom
+console.log(b.info.name);//tom
+</code></pre><h4 id="case-5"><a href="#case-5" class="headerlink" title="case 5:"></a>case 5:</h4><pre><code>var fun = function(){};
+fun.prototype = {
+    name:&apos;jj&apos;,
+    info : {
+        name : &apos;peter&apos;,
+        age : 25
+    }
+};
+var a = new fun();
+var b = new fun();
+a.info= {name:&quot;jack&quot;};
+b.info = {name:&quot;tom&quot;}; //一个点相当于在这个b对象本身上创建一个info属性并赋值
+console.log(a);
+console.log(b);
+console.log(a.info.name);//jack
+console.log(b.info.name);//tom
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/25/prototype/" data-id="cj4aza1oh0012j2s6qrs3fg29" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/02/webstoem/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          webstorm常用快捷键
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/13/setinterval/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">定时器进阶</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

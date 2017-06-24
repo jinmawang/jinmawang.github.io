@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/6 | 风中劲草</title>
+  <title>用jquery获取背景图片的路径的兼容问题 | 风中劲草</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="风中劲草">
-<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
+  <meta name="description" content="例如$(‘.lf-index’).css(“backgroundImage”)ios和macOS下返回url(http://i0.letvimg.com/images/bg.jpg )其余如安卓和windows的chrome下返回 url(“http://i0.letvimg.com/images/bg.jpg“)  代码如下 1234567891011121314151617181920212">
+<meta name="keywords" content="jquery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用jquery获取背景图片的路径的兼容问题">
+<meta property="og:url" content="http://yoursite.com/2016/11/05/jq_bgimage/index.html">
 <meta property="og:site_name" content="风中劲草">
+<meta property="og:description" content="例如$(‘.lf-index’).css(“backgroundImage”)ios和macOS下返回url(http://i0.letvimg.com/images/bg.jpg )其余如安卓和windows的chrome下返回 url(“http://i0.letvimg.com/images/bg.jpg“)  代码如下 1234567891011121314151617181920212">
+<meta property="og:updated_time" content="2017-06-24T06:18:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风中劲草">
+<meta name="twitter:title" content="用jquery获取背景图片的路径的兼容问题">
+<meta name="twitter:description" content="例如$(‘.lf-index’).css(“backgroundImage”)ios和macOS下返回url(http://i0.letvimg.com/images/bg.jpg )其余如安卓和windows的chrome下返回 url(“http://i0.letvimg.com/images/bg.jpg“)  代码如下 1234567891011121314151617181920212">
   
     <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
   
@@ -63,58 +68,66 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/24/hello-world/" class="archive-article-date">
-  <time datetime="2017-06-24T07:26:20.000Z" itemprop="datePublished">Jun 24</time>
+        <section id="main"><article id="post-jq_bgimage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/05/jq_bgimage/" class="article-date">
+  <time datetime="2016-11-05T07:09:42.000Z" itemprop="datePublished">2016-11-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/24/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      用jquery获取背景图片的路径的兼容问题
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/18/jq_react_vue/" class="archive-article-date">
-  <time datetime="2017-06-18T06:29:23.000Z" itemprop="datePublished">Jun 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/jq_react_vue/">jquery与vue、react的区别</a>
-    </h1>
-  
+        <blockquote>
+<p>例如$(‘.lf-index’).css(“backgroundImage”)<br>ios和macOS下返回url(<a href="http://i0.letvimg.com/images/bg.jpg" target="_blank" rel="external">http://i0.letvimg.com/images/bg.jpg</a> )<br>其余如安卓和windows的chrome下返回 url(“<a href="http://i0.letvimg.com/images/bg.jpg" target="_blank" rel="external">http://i0.letvimg.com/images/bg.jpg</a>“)</p>
+</blockquote>
+<p>代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">/*获取所有图片路径*/</div><div class="line">function imgUrlArr() &#123;</div><div class="line">    var imgList = [],</div><div class="line">        imgEle = $(&quot;.lantern-festival&quot;).find(&quot;img&quot;),</div><div class="line">        bgImgEle = $(&quot;.lantern-festival&quot;).find(&quot;.bgimg&quot;),</div><div class="line">        imgEleArr = [].slice.call(imgEle).concat([].slice.call(bgImgEle));</div><div class="line">   // imgEleArr = imgEle;</div><div class="line">    for(var i= 0,l=imgEleArr.length;i&lt;l; i++)&#123;</div><div class="line">        if($(imgEleArr[i]).attr(&quot;src&quot;)) &#123;</div><div class="line">            imgList.push($(imgEleArr[i]).attr(&quot;src&quot;).replace(&quot;http:&quot;,&quot;&quot;));</div><div class="line">        &#125;else if($(imgEleArr[i]).css(&quot;background&quot;)) &#123;</div><div class="line">            if($(imgEleArr[i]).css(&quot;backgroundImage&quot;).indexOf(&apos;url(&quot;&apos;) != -1) &#123;//其余如安卓和windows chrome下返回 url(&quot;http://i0.letvimg.com/images/bg.jpg&quot;)</div><div class="line">                var a = $(imgEleArr[i]).css(&quot;backgroundImage&quot;).replace(&apos;url(&apos;,&apos;&apos;).replace(&apos;)&apos;,&apos;&apos;)</div><div class="line">                a = a.substr(1,a.length-1);</div><div class="line">                a=a.substr(0,a.length-1)</div><div class="line">                imgList.push(a.replace(&quot;https:&quot;,&quot;&quot;).replace(&quot;http:&quot;,&quot;&quot;));</div><div class="line">            &#125;else if($(imgEleArr[i]).css(&quot;backgroundImage&quot;).indexOf(&apos;url(&apos;) != -1) &#123;//  ios下返回url(http://i0.letvimg.com/images/bg.jpg)</div><div class="line">                var a = $(imgEleArr[i]).css(&quot;backgroundImage&quot;).replace(&apos;url(&apos;,&apos;&apos;).replace(&apos;)&apos;,&apos;&apos;)</div><div class="line">                imgList.push(a.replace(&quot;https:&quot;,&quot;&quot;).replace(&quot;http:&quot;,&quot;&quot;));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> return imgList;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/05/jq_bgimage/" data-id="cj4aza1nr000ij2s6wgo19jfe" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/12/audio/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          audio音频在移动端无法自动播放的问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/29/newimage/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">new image ().onload的问题</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

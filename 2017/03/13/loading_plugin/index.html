@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>简易loading插件 | 风中劲草</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简易的、带百分比的移动端loading插件  一.普通js(jquery)版本 将所有图片资源作为loading进度条的加载资源 1.html部分需要在所有有背景图片的盒子上手动添加一个为“bgimg”的类名，这样可以高效率地找到背景图片的链接，但也比较麻烦。可以用另一种方法，遍历页面中的所有元素获取背景图片链接，这样做的好处就是方便但性能较低。这里采用第一种方法。  &amp;lt;div class">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简易loading插件">
+<meta property="og:url" content="http://yoursite.com/2017/03/13/loading_plugin/index.html">
+<meta property="og:site_name" content="风中劲草">
+<meta property="og:description" content="简易的、带百分比的移动端loading插件  一.普通js(jquery)版本 将所有图片资源作为loading进度条的加载资源 1.html部分需要在所有有背景图片的盒子上手动添加一个为“bgimg”的类名，这样可以高效率地找到背景图片的链接，但也比较麻烦。可以用另一种方法，遍历页面中的所有元素获取背景图片链接，这样做的好处就是方便但性能较低。这里采用第一种方法。  &amp;lt;div class">
+<meta property="og:updated_time" content="2017-06-24T06:19:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简易loading插件">
+<meta name="twitter:description" content="简易的、带百分比的移动端loading插件  一.普通js(jquery)版本 将所有图片资源作为loading进度条的加载资源 1.html部分需要在所有有背景图片的盒子上手动添加一个为“bgimg”的类名，这样可以高效率地找到背景图片的链接，但也比较麻烦。可以用另一种方法，遍历页面中的所有元素获取背景图片链接，这样做的好处就是方便但性能较低。这里采用第一种方法。  &amp;lt;div class">
+  
+    <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">风中劲草</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">哈哈哈哈哈</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-loading_plugin" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/13/loading_plugin/" class="article-date">
+  <time datetime="2017-03-13T05:32:06.000Z" itemprop="datePublished">2017-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      简易loading插件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>简易的、带百分比的移动端loading插件</p>
+</blockquote>
+<h4 id="一-普通js-jquery-版本"><a href="#一-普通js-jquery-版本" class="headerlink" title="一.普通js(jquery)版本"></a>一.普通js(jquery)版本</h4><blockquote>
+<p>将所有图片资源作为loading进度条的加载资源</p>
+<h5 id="1-html部分"><a href="#1-html部分" class="headerlink" title="1.html部分"></a>1.html部分</h5><p>需要在所有有背景图片的盒子上手动添加一个为“bgimg”的类名，这样可以高效率地找到背景图片的链接，但也比较麻烦。可以用另一种方法，遍历页面中的所有元素获取背景图片链接，这样做的好处就是方便但性能较低。这里采用第一种方法。</p>
+</blockquote>
+<pre><code>&lt;div class=&quot;case&quot;&gt;
+    &lt;div class=&quot; case1 bgimg&quot;&gt;&lt;/div&gt;
+    &lt;img src=&quot;../images/bg.jpg&quot; alt=&quot;&quot;/&gt;
+    &lt;img src=&quot;../images/lf.png&quot; alt=&quot;&quot;/&gt;
+&lt;/div&gt;
+</code></pre><h5 id="2-css部分"><a href="#2-css部分" class="headerlink" title="2.css部分"></a>2.css部分</h5><pre><code>html,body {
+       width: 100%;
+       height: 100%;
+   }
+   .loading {
+       width: 100%;
+       height: 100%;
+       background: #fff;
+       position: absolute;
+       top: 0;
+       left: 0;
+       z-index: 9999;
+   }
+   .loading-content {
+       height: 10rem;
+       width: 10rem;
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       margin-top:-5rem;
+       margin-left: -5rem;
+   }
+   .spinner {
+       width: 3rem;
+       height: 3rem;
+       margin: 1.75rem auto 1.25rem;
+       position: relative;
+
+   }
+
+   .container1 &gt; div, .container2 &gt; div, .container3 &gt; div {
+       width: .5rem;
+       height: .5rem;
+       background-color: #169af7;
+       border-radius: 100%;
+       position: absolute;
+       -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+       animation: bouncedelay 1.2s infinite ease-in-out;
+       -webkit-animation-fill-mode: both;
+       animation-fill-mode: both
+   }
+
+   .spinner .spinner-container {
+
+       width: 2rem;
+       height: 2rem;
+       position: absolute;
+       left: 50%;
+       top: 30%;
+       margin-left: -1rem;
+   }
+
+   .container2 {
+       -webkit-transform: rotateZ(45deg);
+       transform: rotateZ(45deg)
+   }
+
+   .container3 {
+       -webkit-transform: rotateZ(90deg);
+       transform: rotateZ(90deg)
+   }
+
+   .circle1 {
+       top: 0;
+       left: 0
+   }
+
+   .circle2 {
+       top: 0;
+       right: 0
+   }
+
+   .circle3 {
+       right: 0;
+       bottom: 0
+   }
+
+   .circle4 {
+       left: 0;
+       bottom: 0
+   }
+
+   .container2 .circle1 {
+       -webkit-animation-delay: -1.1s;
+       animation-delay: -1.1s
+   }
+
+   .container3 .circle1 {
+       -webkit-animation-delay: -1.0s;
+       animation-delay: -1.0s
+   }
+
+   .container1 .circle2 {
+       -webkit-animation-delay: -0.9s;
+       animation-delay: -0.9s
+   }
+
+   .container2 .circle2 {
+       -webkit-animation-delay: -0.8s;
+       animation-delay: -0.8s
+   }
+
+   .container3 .circle2 {
+       -webkit-animation-delay: -0.7s;
+       animation-delay: -0.7s
+   }
+
+   .container1 .circle3 {
+       -webkit-animation-delay: -0.6s;
+       animation-delay: -0.6s
+   }
+
+   .container2 .circle3 {
+       -webkit-animation-delay: -0.5s;
+       animation-delay: -0.5s
+   }
+
+   .container3 .circle3 {
+       -webkit-animation-delay: -0.4s;
+       animation-delay: -0.4s
+   }
+
+   .container1 .circle4 {
+       -webkit-animation-delay: -0.3s;
+       animation-delay: -0.3s
+   }
+
+   .container2 .circle4 {
+       -webkit-animation-delay: -0.2s;
+       animation-delay: -0.2s
+   }
+
+   .container3 .circle4 {
+       -webkit-animation-delay: -0.1s;
+       animation-delay: -0.1s
+   }
+
+   @-webkit-keyframes bouncedelay {
+       0%, 80%, 100% {
+           -webkit-transform: scale(0.0)
+       }
+       40% {
+           -webkit-transform: scale(1.0)
+       }
+   }
+
+   @keyframes bouncedelay {
+       0%, 80%, 100% {
+           transform: scale(0.0);
+           -webkit-transform: scale(0.0)
+       }
+       40% {
+           transform: scale(1.0);
+           -webkit-transform: scale(1.0)
+       }
+   }
+
+   .loading-percent {
+       text-align: center;
+       color: #000;
+   }
+
+     .case1 {
+      width: 10rem;
+      height: 20rem;
+      background:url(&quot;../images/0.jpg&quot;) ;
+  }
+</code></pre><h5 id="3-js部分"><a href="#3-js部分" class="headerlink" title="3.js部分"></a>3.js部分</h5><pre><code> function jLoading(ele) {
+    this.$dom = $(ele);
+    this.imgUrlArr = this.getImgUrlArr();
+    this.create();
+    this.restOfProgress = 100;
+    this.process = 0;
+}
+jLoading.prototype.create = function() {
+    var htmlStr = &apos;&lt;div class=&quot;loading&quot;&gt;&apos;;
+    htmlStr +=    &apos;&lt;div class=&quot;loading-content&quot;&gt;&apos;;
+    htmlStr +=         &apos;&lt;div class=&quot;spinner&quot;&gt;&apos;;
+    htmlStr +=             &apos;&lt;div class=&quot;spinner-container container1&quot;&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle1&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle2&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle3&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle4&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=             &apos;&lt;/div&gt;&apos;;
+    htmlStr +=            &apos;&lt;div class=&quot;spinner-container container2&quot;&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle1&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle2&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle3&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=                &apos;&lt;div class=&quot;circle4&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=             &apos;&lt;/div&gt;&apos;;
+    htmlStr +=             &apos;&lt;div class=&quot;spinner-container container3&quot;&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle1&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle2&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle3&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=                 &apos;&lt;div class=&quot;circle4&quot;&gt;&lt;/div&gt;&apos;;
+    htmlStr +=             &apos;&lt;/div&gt;&apos;;
+    htmlStr +=         &apos;&lt;/div&gt;&apos;;
+    htmlStr +=         &apos;&lt;div class=&quot;loading-percent&quot;&gt;&lt;span&gt;0&lt;/span&gt;%&lt;/div&gt;&apos;;
+    htmlStr +=   &apos;&lt;/div&gt;&apos;;
+    htmlStr += &apos;&lt;/div&gt;&apos;;
+    this.$dom.before(htmlStr);
+};
+jLoading.prototype.getImgUrlArr = function() {
+    var imgList = [],
+            imgEle = this.$dom.find(&quot;img&quot;),
+            bgImgEle = this.$dom.find(&quot;.bgimg&quot;),
+            imgEleArr = [].slice.call(imgEle).concat([].slice.call(bgImgEle));
+    for(var i= 0,l=imgEleArr.length;i&lt;l; i++){
+        if($(imgEleArr[i]).attr(&quot;src&quot;)) {
+            imgList.push($(imgEleArr[i]).attr(&quot;src&quot;).replace(&quot;http:&quot;,&quot;&quot;));
+        }else if($(imgEleArr[i]).css(&quot;background&quot;)) {
+            if($(imgEleArr[i]).css(&quot;backgroundImage&quot;).indexOf(&apos;url(&quot;&apos;) != -1) {//安卓和windows chrome下返回 url(&quot;http://i0.letvimg.com/images/bg.jpg&quot;)
+                var a = $(imgEleArr[i]).css(&quot;backgroundImage&quot;).replace(&apos;url(&apos;,&apos;&apos;).replace(&apos;)&apos;,&apos;&apos;);
+                a = a.substr(1,a.length-1);
+                a=a.substr(0,a.length-1);
+                imgList.push(a.replace(&quot;https:&quot;,&quot;&quot;).replace(&quot;http:&quot;,&quot;&quot;));
+            }else if($(imgEleArr[i]).css(&quot;backgroundImage&quot;).indexOf(&apos;url(&apos;) != -1) {//  ios下返回url(http://i0.letvimg.com/images/bg.jpg)
+                var a = $(imgEleArr[i]).css(&quot;backgroundImage&quot;).replace(&apos;url(&apos;,&apos;&apos;).replace(&apos;)&apos;,&apos;&apos;);
+                imgList.push(a.replace(&quot;https:&quot;,&quot;&quot;).replace(&quot;http:&quot;,&quot;&quot;));
+            }
+        }
+    }
+    return imgList;
+};
+jLoading.prototype.loading = function() {
+   var _this = this;
+    var singleProcess = this.restOfProgress/this.imgUrlArr.length;//一张图片加载完成可以走的点
+    for(var i = 0,l = this.imgUrlArr.length ; i&lt;l;i++) {
+        var img = new Image();
+        img.onload = function () {
+            if ((_this.process + singleProcess) &lt; 100) {
+                _this.process += singleProcess;
+            } else {
+                _this.process = 100;
+            }
+            _this.animate();
+            if(_this.process == 100) {
+               _this.loadingSuccess();
+            }
+        };
+        img.src = this.imgUrlArr[i];
+    }
+};
+jLoading.prototype.animate = function() {
+    $(&quot;.loading-percent span&quot;).text(Math.ceil(this.process));
+};
+jLoading.prototype.loadingSuccess = function() {
+    console.log(&quot;图片加载完成&quot;);
+    $(&quot;.loading&quot;).hide();
+};
+$.fn.jLoading = function() {
+    new jLoading(this).loading();
+}
+</code></pre><h5 id="4-调用方法"><a href="#4-调用方法" class="headerlink" title="4.调用方法"></a>4.调用方法</h5><blockquote>
+<p>前面的jQuery对象是指所需要统计图片资源的大盒子，loading相关的html部分也会插入在这个大盒子之前。</p>
+</blockquote>
+<pre><code>$(&quot;.case&quot;).jLoading();
+</code></pre><h4 id="二-createJS版本"><a href="#二-createJS版本" class="headerlink" title="二.createJS版本"></a>二.createJS版本</h4><blockquote>
+<p>在createJS中的preloadJS库和soundJS库基础上封装的插件，将所有图片资源和音频资源作为loading进度条的加载资源。</p>
+</blockquote>
+<h5 id="1-html部分-1"><a href="#1-html部分-1" class="headerlink" title="1.html部分"></a>1.html部分</h5><blockquote>
+<p>同样需要在所有有背景图片的盒子上手动添加一个为“bgimg”的类名，这样可以高效率地找到背景图片的链接，但也比较麻烦。可以用另一种方法，遍历页面中的所有元素获取背景图片链接，这样做的好处就是方便但性能较低。这里采用第一种方法。</p>
+</blockquote>
+<pre><code>&lt;div class=&quot;case&quot;&gt;
+    &lt;!--音频开关--&gt;
+    &lt;div class=&quot;sound-switch&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot; case1 bgimg&quot;&gt;&lt;/div&gt;
+    &lt;img src=&quot;../images/bg.jpg&quot; alt=&quot;&quot;/&gt;
+    &lt;img src=&quot;../images/lf.png&quot; alt=&quot;&quot;/&gt;
+&lt;/div&gt;
+</code></pre><h5 id="2-css部分-1"><a href="#2-css部分-1" class="headerlink" title="2.css部分"></a>2.css部分</h5><blockquote>
+<p>同上    </p>
+<h5 id="3-js部分-1"><a href="#3-js部分-1" class="headerlink" title="3.js部分"></a>3.js部分</h5></blockquote>
+<pre><code>&lt;script src=&quot;js/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&apos;js/preloadjs-NEXT.combined.js&apos;&gt;&lt;/script&gt;
+&lt;script src =&apos;js/soundjs-NEXT.combined.js&apos;&gt;&lt;/script&gt;
+&lt;script&gt;
+    function jLoading(ele) {
+        this.$dom = $(ele);
+        this.manifest = this.getImgUrlArr();
+        this.create();
+    }
+    jLoading.prototype.create = function() {
+        var htmlStr = &apos;&lt;div class=&quot;loading&quot;&gt;&apos;;
+        htmlStr +=    &apos;&lt;div class=&quot;loading-content&quot;&gt;&apos;;
+        htmlStr +=         &apos;&lt;div class=&quot;spinner&quot;&gt;&apos;;
+        htmlStr +=             &apos;&lt;div class=&quot;spinner-container container1&quot;&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle1&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle2&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle3&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle4&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=             &apos;&lt;/div&gt;&apos;;
+        htmlStr +=            &apos;&lt;div class=&quot;spinner-container container2&quot;&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle1&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle2&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle3&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=                &apos;&lt;div class=&quot;circle4&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=             &apos;&lt;/div&gt;&apos;;
+        htmlStr +=             &apos;&lt;div class=&quot;spinner-container container3&quot;&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle1&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle2&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle3&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=                 &apos;&lt;div class=&quot;circle4&quot;&gt;&lt;/div&gt;&apos;;
+        htmlStr +=             &apos;&lt;/div&gt;&apos;;
+        htmlStr +=         &apos;&lt;/div&gt;&apos;;
+        htmlStr +=         &apos;&lt;div class=&quot;loading-percent&quot;&gt;&lt;span&gt;0&lt;/span&gt;%&lt;/div&gt;&apos;;
+        htmlStr +=   &apos;&lt;/div&gt;&apos;;
+        htmlStr += &apos;&lt;/div&gt;&apos;;
+        this.$dom.before(htmlStr);
+    };
+    jLoading.prototype.getImgUrlArr = function() {
+        var imgList = [],
+                imgEle = this.$dom.find(&quot;img&quot;),
+                bgImgEle = this.$dom.find(&quot;.bgimg&quot;),
+                imgEleArr = [].slice.call(imgEle).concat([].slice.call(bgImgEle));
+        for(var i= 0,l=imgEleArr.length;i&lt;l; i++){
+            if($(imgEleArr[i]).attr(&quot;src&quot;)) {
+                imgList.push($(imgEleArr[i]).attr(&quot;src&quot;).replace(&quot;http:&quot;,&quot;&quot;));
+            }else if($(imgEleArr[i]).css(&quot;background&quot;)) {
+                if($(imgEleArr[i]).css(&quot;backgroundImage&quot;).indexOf(&apos;url(&quot;&apos;) != -1) {//安卓和windows chrome下返回 url(&quot;http://i0.letvimg.com/images/bg.jpg&quot;)
+                    var a = $(imgEleArr[i]).css(&quot;backgroundImage&quot;).replace(&apos;url(&apos;,&apos;&apos;).replace(&apos;)&apos;,&apos;&apos;);
+                    a = a.substr(1,a.length-1);
+                    a=a.substr(0,a.length-1);
+                    imgList.push(a.replace(&quot;https:&quot;,&quot;&quot;).replace(&quot;http:&quot;,&quot;&quot;));
+                }else if($(imgEleArr[i]).css(&quot;backgroundImage&quot;).indexOf(&apos;url(&apos;) != -1) {//  ios下返回url(http://i0.letvimg.com/images/bg.jpg)
+                    var a = $(imgEleArr[i]).css(&quot;backgroundImage&quot;).replace(&apos;url(&apos;,&apos;&apos;).replace(&apos;)&apos;,&apos;&apos;);
+                    imgList.push(a.replace(&quot;https:&quot;,&quot;&quot;).replace(&quot;http:&quot;,&quot;&quot;));
+                }
+            }
+        }
+        return imgList;
+    };
+    jLoading.prototype.loading = function() {
+        this.preload = new createjs.LoadQueue(true,&quot;&quot;);
+        this.preload.installPlugin(createjs.Sound);
+        this.preload.loadFile({id:&quot;sound&quot;, src:&quot;xingxing.mp3&quot;});
+        this.preload.loadManifest(this.manifest);
+        this.preload.on(&quot;progress&quot;,this.animate);
+        this.preload.on(&quot;complete&quot;,this.loadingSuccess);
+    };
+    jLoading.prototype.animate = function() {
+        //console.log(this);//这里的this不是指向jLoading 而是指向preload对象
+        $(&quot;.loading-percent span&quot;).text(parseInt(this.progress*100));
+    };
+    jLoading.prototype.loadingSuccess = function() {
+        //这里的this不是指向jLoading 而是指向preload对象
+        console.log(&quot;图片和音乐加载完成&quot;);
+        $(&quot;.loading&quot;).hide();
+        mySound.soundManage();
+    };
+    $.fn.jLoading = function() {
+        new jLoading(this).loading();
+
+    }
+    $(&quot;.case&quot;).jLoading();
+
+
+
+
+    //音频管理
+    var mySound = {
+        soundManage: function () {
+            this.soundPosition = 0;
+            this.sound = createjs.Sound.play(&quot;sound&quot;);
+            this.soundDom = $(&quot;.sound-switch&quot;);
+            this.sound.on(&quot;complete&quot;, function () {
+                this.sound.startTime = 0;
+                this.sound.play();
+            }.bind(this));
+             this.soundDom.on(&quot;click&quot;, function () {
+                this.soundControl();
+            }.bind(this))
+        },
+        soundControl: function () {
+            if( &quot;playFinished&quot; == this.sound.playState) {//音乐处于暂停状态
+                this.sound.startTime = this.soundPosition;
+                        this.sound.play();
+                        this.soundDom.removeClass(&quot;off&quot;);
+            }else if(&quot;playSucceeded&quot; == this.sound.playState){//音乐处于播放状态
+                    this.soundPosition = this.sound.startTime + this.sound.position;
+                    this.sound.stop();
+                    this.soundDom.addClass(&quot;off&quot;);
+            }
+        }
+    }
+&lt;/script&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/13/loading_plugin/" data-id="cj4aza1o1000pj2s6bb9oasz8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/15/slider_plugin/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          标准轮播图插件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/02/webstoem/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">webstorm常用快捷键</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE8/">IE8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-jQuery/">JavaScript jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-vue-react/">jquery vue react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IE8/" style="font-size: 10px;">IE8</a> <a href="/tags/JavaScript-jQuery/" style="font-size: 10px;">JavaScript jQuery</a> <a href="/tags/css/" style="font-size: 13.33px;">css</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 16.67px;">jquery</a> <a href="/tags/jquery-vue-react/" style="font-size: 10px;">jquery vue react</a> <a href="/tags/vue/" style="font-size: 13.33px;">vue</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/移动端/" style="font-size: 13.33px;">移动端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/24/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/18/jq_react_vue/">jquery与vue、react的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/28/decimalpx/">小数像素问题</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/vue2_vue1/">vue2.0与1.0比较</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/25/vue2/">vue2.0笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Jawesome<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

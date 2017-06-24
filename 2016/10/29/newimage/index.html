@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/6 | 风中劲草</title>
+  <title>new image ().onload的问题 | 风中劲草</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="风中劲草">
-<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
+  <meta name="description" content="loading 时用到的new image ().onload方法new Image（）.onload方法有兼容性问题，图片有缓存后不同的浏览器会有不同的反应，有的会触发onload，有的则不会，具体可以上网查看。还有， src属性需要写在onload事件后面。如下 var image=new Image(); imgae.onload = funtion; imgae.src = &amp;apos;u">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="new image ().onload的问题">
+<meta property="og:url" content="http://yoursite.com/2016/10/29/newimage/index.html">
 <meta property="og:site_name" content="风中劲草">
+<meta property="og:description" content="loading 时用到的new image ().onload方法new Image（）.onload方法有兼容性问题，图片有缓存后不同的浏览器会有不同的反应，有的会触发onload，有的则不会，具体可以上网查看。还有， src属性需要写在onload事件后面。如下 var image=new Image(); imgae.onload = funtion; imgae.src = &amp;apos;u">
+<meta property="og:updated_time" content="2017-06-24T06:19:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风中劲草">
+<meta name="twitter:title" content="new image ().onload的问题">
+<meta name="twitter:description" content="loading 时用到的new image ().onload方法new Image（）.onload方法有兼容性问题，图片有缓存后不同的浏览器会有不同的反应，有的会触发onload，有的则不会，具体可以上网查看。还有， src属性需要写在onload事件后面。如下 var image=new Image(); imgae.onload = funtion; imgae.src = &amp;apos;u">
   
     <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
   
@@ -63,58 +68,67 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/24/hello-world/" class="archive-article-date">
-  <time datetime="2017-06-24T07:26:20.000Z" itemprop="datePublished">Jun 24</time>
+        <section id="main"><article id="post-newimage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/29/newimage/" class="article-date">
+  <time datetime="2016-10-29T06:29:42.000Z" itemprop="datePublished">2016-10-29</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/24/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      new image ().onload的问题
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/18/jq_react_vue/" class="archive-article-date">
-  <time datetime="2017-06-18T06:29:23.000Z" itemprop="datePublished">Jun 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/jq_react_vue/">jquery与vue、react的区别</a>
-    </h1>
-  
+        <h4 id="loading-时用到的new-image-onload方法"><a href="#loading-时用到的new-image-onload方法" class="headerlink" title="loading 时用到的new image ().onload方法"></a>loading 时用到的new image ().onload方法</h4><p>new Image（）.onload方法有兼容性问题，图片有缓存后不同的浏览器会有不同的反应，有的会触发onload，有的则不会，具体可以上网查看。还有， src属性需要写在onload事件后面。如下</p>
+<pre><code>var image=new Image();
+imgae.onload = funtion;
+imgae.src = &apos;url&apos;
+</code></pre><p>因为js内部是按顺序逐行执行的，可以认为是同步的给imgae赋值src时，去加载图片这个过程是异步的，这个异步过程完成后，如果有onload，则执行onload<br>如果先赋值src，那么这个异步过程可能在你赋值onload之前就完成了（比如图片缓存，或者是js由于某些原因被阻塞了），那么onload就不会执行反之，js同步执行确定onload赋值完成后才会赋值src,可以保证这个异步过程在onload赋值完成后才开始进行，也就保证了onload一定会被执行到</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/29/newimage/" data-id="cj4aza1oc000xj2s6pbvaqa4r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/05/jq_bgimage/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          用jquery获取背景图片的路径的兼容问题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/02/newdate/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">new Date()的兼容问题</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         

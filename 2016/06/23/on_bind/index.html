@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2017/6 | 风中劲草</title>
+  <title>jquery中on和bind的区别 | 风中劲草</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="风中劲草">
-<meta property="og:url" content="http://yoursite.com/archives/2017/06/index.html">
+  <meta name="description" content="bind()函数是jQuery 1.7之前或更早版本采用的一个用来绑定事件处理程序的函数；on()函数是jQuery 1.7版本提供的首选的用来绑定事件处理程序的函数；从1.7版本的介绍以及参数描述来看，其实这两个函数基本上用法一致，但可能在早期的版本中，bind()函数一次只能为标签对象绑定一个事件的处理程序，而on()函数则可以一次为多个不同的事件绑定处理程序。  delegate()采用事">
+<meta name="keywords" content="jquery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery中on和bind的区别">
+<meta property="og:url" content="http://yoursite.com/2016/06/23/on_bind/index.html">
 <meta property="og:site_name" content="风中劲草">
+<meta property="og:description" content="bind()函数是jQuery 1.7之前或更早版本采用的一个用来绑定事件处理程序的函数；on()函数是jQuery 1.7版本提供的首选的用来绑定事件处理程序的函数；从1.7版本的介绍以及参数描述来看，其实这两个函数基本上用法一致，但可能在早期的版本中，bind()函数一次只能为标签对象绑定一个事件的处理程序，而on()函数则可以一次为多个不同的事件绑定处理程序。  delegate()采用事">
+<meta property="og:updated_time" content="2017-06-24T06:19:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风中劲草">
+<meta name="twitter:title" content="jquery中on和bind的区别">
+<meta name="twitter:description" content="bind()函数是jQuery 1.7之前或更早版本采用的一个用来绑定事件处理程序的函数；on()函数是jQuery 1.7版本提供的首选的用来绑定事件处理程序的函数；从1.7版本的介绍以及参数描述来看，其实这两个函数基本上用法一致，但可能在早期的版本中，bind()函数一次只能为标签对象绑定一个事件的处理程序，而on()函数则可以一次为多个不同的事件绑定处理程序。  delegate()采用事">
   
     <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
   
@@ -63,58 +68,67 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/24/hello-world/" class="archive-article-date">
-  <time datetime="2017-06-24T07:26:20.000Z" itemprop="datePublished">Jun 24</time>
+        <section id="main"><article id="post-on_bind" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/23/on_bind/" class="article-date">
+  <time datetime="2016-06-23T09:09:47.000Z" itemprop="datePublished">2016-06-23</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/24/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      jquery中on和bind的区别
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/06/18/jq_react_vue/" class="archive-article-date">
-  <time datetime="2017-06-18T06:29:23.000Z" itemprop="datePublished">Jun 18</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/18/jq_react_vue/">jquery与vue、react的区别</a>
-    </h1>
-  
+        <blockquote>
+<p>bind()函数是jQuery 1.7之前或更早版本采用的一个用来绑定事件处理程序的函数；on()函数是jQuery 1.7版本提供的首选的用来绑定事件处理程序的函数；从1.7版本的介绍以及参数描述来看，其实这两个函数基本上用法一致，但可能在早期的版本中，bind()函数一次只能为标签对象绑定一个事件的处理程序，而on()函数则可以一次为多个不同的事件绑定处理程序。</p>
+</blockquote>
+<p>delegate()采用事件委托的概念，这样可以不用再为一个大盒子里面的所有子盒子绑定事件， 当在大盒子内任意元素上点击时，事件会一层层从event target向上冒泡，直至到达你为其绑定事件的元素。冒泡的过程中，如果事件的currentTarget与选择器匹配时，就会执行代码。 也可以为动态添加进大盒子的子元素绑定事件。</p>
+<p>on()方法综合了bind()和delegate()方法。尽量使用on()方法。</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/23/on_bind/" data-id="cj4aza1oa000vj2s6rs0ahb10" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/25/attr_prop/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          jQuery 的 attr 与 prop 的区别
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/23/$_index/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">$(this).index()</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
