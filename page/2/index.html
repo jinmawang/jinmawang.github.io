@@ -1,809 +1,1236 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>风中劲草</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="风中劲草">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="风中劲草">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="风中劲草">
-  
-    <link rel="alternate" href="/atom.xml" title="风中劲草" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
 
+    <!-- Title -->
+    
+    <title>
+        
+        风中劲草
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Jawesome">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="null">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="风中劲草">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="风中劲草">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="">
+    
+
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="风中劲草">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/page/2/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">风中劲草</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">哈哈哈哈哈</a>
-        </h2>
-      
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Index Module -->
+<div class="material-index mdl-grid">
+    
+    <div class="locate-thumbnail-symbol"></div>
+
+    <!-- Pin on top -->
+    
+
+    <!-- Normal Post -->
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/02/08/git_forking/">git forking 工作流</a></p>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-          <a class="main-nav-link" href="/">Home</a>
+            
+  Forking工作流是分布式工作流，充分利用了Git在分支和克隆上的优势。可以安全可靠地管理大团队的开发者（d...
         
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/02/08/git_forking/" target="_self">阅读全文</a>
+        </span>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-setinterval" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/13/setinterval/" class="article-date">
-  <time datetime="2017-02-13T03:02:08.000Z" itemprop="datePublished">2017-02-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/13/setinterval/">定时器进阶</a>
-    </h1>
-  
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>2月 08, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/工具/">工具</a>
+            </span>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-setTimeout-和setInterval-中可传入的参数除了通常的函数名和时间间隔外，HTML5规范还允许它们传入额外的参数，并在调用函数时把这些参数传递过去。（IE9及其以下版本IE浏览器不支持）"><a href="#1-setTimeout-和setInterval-中可传入的参数除了通常的函数名和时间间隔外，HTML5规范还允许它们传入额外的参数，并在调用函数时把这些参数传递过去。（IE9及其以下版本IE浏览器不支持）" class="headerlink" title="1. setTimeout()和setInterval()中可传入的参数除了通常的函数名和时间间隔外，HTML5规范还允许它们传入额外的参数，并在调用函数时把这些参数传递过去。（IE9及其以下版本IE浏览器不支持）"></a>1. setTimeout()和setInterval()中可传入的参数除了通常的函数名和时间间隔外，HTML5规范还允许它们传入额外的参数，并在调用函数时把这些参数传递过去。（IE9及其以下版本IE浏览器不支持）</h4><blockquote>
-<p>这种方法比较容易理解，但是局限性太大导致也不常见<br>这里的字符串是一段JavaScript代码，其中的e表示的是变量，  而且经测试，这个变量要是个全局的，如果是在某函数里面如此调用setTimeout， 而此变量只是个函数内部变量的话，是会报变量不存在的。 </p>
-</blockquote>
-<pre><code>var e = 1;
-var interval = setInterval(&quot;jj(e)&quot;,1000);
-function jj(a) {
-    e++;
-    console.log(a);//输出1,2,3,4,5......
-}
-</code></pre><blockquote>
-<p>setTimeout()和setInterval()中可传入的参数除了通常的函数名和时间间隔外，<br> HTML5规范还允许它们传入额外的参数，并在调用函数时把这些参数传递过去。（IE9及其以下版本IE浏览器不支持）<br>这种方式H5新增，但传参进定时器后跟预期不同，预期会输出1,2,3,4…<br> 实际输出1,1,1,1…<br> 因为目前在网上没找到相关资料，猜测是因为这种方式传参到定时器的执行函数里，<br> 定时器每次并不会重新获取该实参的值<br> 定时器的执行函数jj每次用的参数都是e的初始值</p>
-</blockquote>
-<pre><code>var e = 1;
-var interval = setInterval(jj,1000,e);
-function jj(a) {
-    e ++;
-    console.log(a);//输出1,1,1,1....
+            
 
-}
-</code></pre><blockquote>
-<pre><code>改造上述方法
-在定时器的执行函数jj内部将实参和形参做个关联
-用这种方法可以达到预期效果
-</code></pre></blockquote>
-<pre><code>var e = 1;
-var interval = setInterval(jj,1000,e);
-function jj(a) {
-    e++;
-    a = e;
-    console.log(a);//输出2,3,4,5....
+            
 
-}
-</code></pre>
-      
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/13/setinterval/" data-id="cj4aza1of000zj2s65kj40c9u" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+</div>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git_forking" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/08/git_forking/" class="article-date">
-  <time datetime="2017-02-08T11:22:06.000Z" itemprop="datePublished">2017-02-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+            
+            
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/08/git_forking/">git forking 工作流</a>
-    </h1>
-  
-
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>  <em>Forking工作流是分布式工作流，充分利用了Git在分支和克隆上的优势。可以安全可靠地管理大团队的开发者（developer），并能接受不信任贡献者（contributor）的提交。</em></p>
-</blockquote>
-<p>Forking工作流和前面讨论的几种工作流有根本的不同，这种工作流不是使用单个服务端仓库作为『中央』代码基线，而让各个开发者都有一个服务端仓库。这意味着各个代码贡献者有2个Git仓库而不是1个：一个本地私有仓库，另一个服务端公开仓库。</p>
-<p><img src="https://segmentfault.com/img/remote/1460000006724865" alt="enter image description here|center"><br>Forking工作流的一个主要优势是，贡献的代码可以被集成，而不需要所有人都能push代码到仅有的中央仓库中。<br>开发者push到自己的服务端仓库，而只有项目维护者才能push到正式仓库。<br>这样项目维护者可以接受任何开发者的提交，但无需给他正式代码库的写权限。</p>
-<p>效果就是一个分布式的工作流，能为大型、自发性的团队（包括了不受信的第三方）提供灵活的方式来安全的协作。也让这个工作流成为开源项目的理想工作流。</p>
-<h4 id="1-工作方式"><a href="#1-工作方式" class="headerlink" title="1.工作方式"></a>1.工作方式</h4><p>和其它的Git工作流一样，Forking工作流要先有一个公开的正式仓库存储在服务器上。<br>但一个新的开发者想要在项目上工作时，不是直接从正式仓库克隆，而是fork正式项目在服务器上创建一个拷贝。</p>
-<p>这个仓库拷贝作为他个人公开仓库 ——<br>其它开发者不允许push到这个仓库，但可以pull到修改（后面我们很快就会看这点很重要）。<br>在创建了自己服务端拷贝之后，和之前的工作流一样，开发者执行git clone命令克隆仓库到本地机器上，作为私有的开发环境。</p>
-<p>要提交本地修改时，push提交到自己公开仓库中 —— 而不是正式仓库中。<br>然后，给正式仓库发起一个pull request，让项目维护者知道有更新已经准备好可以集成了。<br>对于贡献的代码，pull request也可以很方便地作为一个讨论的地方。</p>
-<p>为了集成功能到正式代码库，维护者pull贡献者的变更到自己的本地仓库中，检查变更以确保不会让项目出错，<br>合并变更到自己本地的master分支，<br>然后pushmaster分支到服务器的正式仓库中。<br>到此，贡献的提交成为了项目的一部分，其它的开发者应该执行pull操作与正式仓库同步自己本地仓库。</p>
-<h4 id="2-正式仓库"><a href="#2-正式仓库" class="headerlink" title="2 . 正式仓库"></a>2 . 正式仓库</h4><p>在Forking工作流中，『官方』仓库的叫法只是一个约定，理解这点很重要。<br>从技术上来看，各个开发者仓库和正式仓库在Git看来没有任何区别。<br>事实上，让正式仓库之所以正式的唯一原因是它是项目维护者的公开仓库。</p>
-<h4 id="3-Forking工作流的分支使用方式"><a href="#3-Forking工作流的分支使用方式" class="headerlink" title="3 .Forking工作流的分支使用方式"></a>3 .Forking工作流的分支使用方式</h4><p>所有的个人公开仓库实际上只是为了方便和其它的开发者共享分支。<br>各个开发者应该用分支隔离各个功能，就像在功能分支工作流和Gitflow工作流一样。<br>唯一的区别是这些分支被共享了。在Forking工作流中这些分支会被pull到另一个开发者的本地仓库中，而在功能分支工作流和Gitflow工作流中是直接被push到正式仓库中。</p>
-<h4 id="4-示例"><a href="#4-示例" class="headerlink" title="4. 示例"></a>4. 示例</h4><p>项目维护者初始化正式仓库<br>和任何使用Git项目一样，第一步是创建在服务器上一个正式仓库，让所有团队成员都可以访问到。<br>通常这个仓库也会作为项目维护者的公开仓库。</p>
-<p>公开仓库应该是裸仓库，不管是不是正式代码库。所以项目维护者会运行像下面的命令来搭建正式仓库：</p>
-<pre><code>ssh user@host
-git init --bare /path/to/repo.git
-</code></pre><p>Bitbucket和Stash提供了一个方便的GUI客户端以完成上面命令行做的事。<br>这个搭建中央仓库的过程和前面提到的工作流完全一样。<br>如果有现存的代码库，维护者也要push到这个仓库中。</p>
-<p>开发者fork正式仓库<br><img src="https://segmentfault.com/img/remote/1460000006724858" alt="enter image description here|center"></p>
-<p>其它所有的开发需要fork正式仓库。<br>可以用git clone命令用SSH协议连通到服务器，<br>拷贝仓库到服务器另一个位置 —— 是的，fork操作基本上就只是一个服务端的克隆。<br>Bitbucket和Stash上可以点一下按钮就让开发者完成仓库的fork操作。</p>
-<p>这一步完成后，每个开发都在服务端有一个自己的仓库。和正式仓库一样，这些仓库应该是裸仓库。<br><img src="https://segmentfault.com/img/remote/1460000006724859" alt="enter image description here|center"></p>
-<p>下一步，各个开发者要克隆自己的公开仓库，用熟悉的git clone命令。</p>
-<p>在这个示例中，假定用Bitbucket托管了仓库。记住，如果这样的话各个开发者需要有各自的Bitbucket账号，使用下面命令克隆服务端自己的仓库：</p>
-<pre><code>git clone https://user@bitbucket.org/us...
-</code></pre><p>相比前面介绍的工作流只用了一个origin远程别名指向中央仓库，Forking工作流需要2个远程别名 ——<br>一个指向正式仓库，另一个指向开发者自己的服务端仓库。别名的名字可以任意命名，常见的约定是使用origin作为远程克隆的仓库的别名<br>（这个别名会在运行git clone自动创建），upstream（上游）作为正式仓库的别名。</p>
-<pre><code>git remote add upstream https://bitbucket.org/maintainer/repo
-</code></pre><p>需要自己用上面的命令创建upstream别名。这样可以简单地保持本地仓库和正式仓库的同步更新。注意，如果上游仓库需要认证（比如不是开源的），你需要提供用户：</p>
-<pre><code>git remote add upstream https://user@bitbucket.org/ma...
-</code></pre><p>这时在克隆和pull正式仓库时，需要提供用户的密码。</p>
-<p>开发者开发自己的功能.<br><img src="https://segmentfault.com/img/remote/1460000006724860" alt="enter image description here|center"></p>
-<p>在刚克隆的本地仓库中，开发者可以像其它工作流一样的编辑代码、提交修改和新建分支：</p>
-<pre><code>git checkout -b some-feature
-Edit some code
-git commit -a -m &quot;Add first draft of some feature&quot;
-</code></pre><p>所有的修改都是私有的直到push到自己公开仓库中。如果正式项目已经往前走了，可以用git pull命令获得新的提交：</p>
-<pre><code>git pull upstream master
-</code></pre><p>由于开发者应该都在专门的功能分支上工作，pull操作结果会都是快进合并。</p>
-<p>开发者发布自己的功能</p>
-<p><img src="https://segmentfault.com/img/remote/1460000006724861" alt="enter image description here|center"></p>
-<p>一旦开发者准备好了分享新功能，需要做二件事。<br>首先，通过push他的贡献代码到自己的公开仓库中，让其它的开发者都可以访问到。<br>他的origin远程别名应该已经有了，所以要做的就是：</p>
-<pre><code>git push origin feature-branch
-</code></pre><p>这里和之前的工作流的差异是，origin远程别名指向开发者自己的服务端仓库，而不是正式仓库。</p>
-<p>第二件事，开发者要通知项目维护者，想要合并他的新功能到正式库中。<br>Bitbucket和Stash提供了Pull Request按钮，弹出表单让你指定哪个分支要合并到正式仓库。<br>一般你会想集成你的功能分支到上游远程仓库的master分支中。</p>
-<p>项目维护者集成开发者的功能<br><img src="https://segmentfault.com/img/remote/1460000006724862" alt="enter image description here|center"></p>
-<p>当项目维护者收到pull request，他要做的是决定是否集成它到正式代码库中。有二种方式来做：</p>
-<p>直接在pull request中查看代码<br>pull代码到他自己的本地仓库，再手动合并<br>第一种做法更简单，维护者可以在GUI中查看变更的差异，做评注和执行合并。<br>但如果出现了合并冲突，需要第二种做法来解决。这种情况下，维护者需要从开发者的服务端仓库中fetch功能分支，<br>合并到他本地的master分支，解决冲突：</p>
-<pre><code>git fetch https://bitbucket.org/user/repo feature-branch
-</code></pre><p>查看变更</p>
-<pre><code>git checkout master
-git merge FETCH_HEAD
-</code></pre><p>变更集成到本地的master分支后，维护者要push变更到服务器上的正式仓库，这样其它的开发者都能访问到：</p>
-<p>git push origin master注意，维护者的origin是指向他自己公开仓库的，即是项目的正式代码库。到此，开发者的贡献完全集成到了项目中。</p>
-<p>开发者和正式仓库做同步<br><img src="https://segmentfault.com/img/remote/1460000006724864" alt="enter image description here|center"><br>由于正式代码库往前走了，其它的开发需要和正式仓库做同步：</p>
-<pre><code>git pull upstream master
-</code></pre><p>如果你之前是使用SVN，Forking工作流可能看起来像是一个激进的范式切换（paradigm shift）。<br>但不要害怕，这个工作流实际上就是在功能分支工作流之上引入另一个抽象层。<br>不是直接通过单个中央仓库来分享分支，而是把贡献代码发布到开发者自己的服务端仓库中。</p>
-<p>示例中解释了，一个贡献如何从一个开发者流到正式的master分支中，但同样的方法可以把贡献集成到任一个仓库中。比如，如果团队的几个人协作实现一个功能，可以在开发之间用相同的方法分享变更，完全不涉及正式仓库。</p>
-<p>这使得Forking工作流对于松散组织的团队来说是个非常强大的工具。任一开发者可以方便地和另一开发者分享变更，任何分支都能有效地合并到正式代码库中。</p>
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
 
-      
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2017/02/08/git_qianduan/">前端 Git 工作流(le)</a></p>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/08/git_forking/" data-id="cj4aza1ni000dj2s6ztpgj69c" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git_qianduan" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/08/git_qianduan/" class="article-date">
-  <time datetime="2017-02-08T07:02:06.000Z" itemprop="datePublished">2017-02-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/08/git_qianduan/">前端 Git 工作流(le)</a>
-    </h1>
-  
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2017/02/08/git_qianduan/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>2月 08, 2017</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/工具/">工具</a>
+            </span>
 
-      </header>
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="前端-Git-工作流-le"><a href="#前端-Git-工作流-le" class="headerlink" title="前端 Git 工作流(le)"></a>前端 Git 工作流(le)</h1><h2 id="0-说明"><a href="#0-说明" class="headerlink" title="0 说明"></a>0 说明</h2><p>本工作流参考自<a href="http://wiki.letv.cn/pages/viewpage.action?pageId=53415515" target="_blank" rel="external">后端 git 工作流</a>，核心思想来自 Forking Workflow。</p>
-<h3 id="0-1-目的"><a href="#0-1-目的" class="headerlink" title="0.1 目的"></a>0.1 目的</h3><p>我们的开发过程围绕着本工作流展开，同时我们希望的达到这样的目标：</p>
-<ul>
-<li>能够持续交付：我们没有固定的发布周期，我们希望主干版本的代码在任何时刻都是可部署的，更改一经通过审查就可以直接上线，这样我们才能很快地发布新的功能或者 Bug 修复，从而快速地获得用户对修改的反馈。</li>
-<li>方便代码审查：我们很重视代码审查，所以这个流程对代码审查功能很友好。</li>
-<li>使用代码沟通：代码是工程师沟通的最直接的渠道。我们希望每一次的更改提交都是独立的，专注并只专注一件事情，这样，我们就很容易地去了解这次更改背后要传达的信息。<h3 id="0-2-工具"><a href="#0-2-工具" class="headerlink" title="0.2 工具"></a>0.2 工具</h3></li>
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/12/12/audio/">audio音频在移动端无法自动播放的问题</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            audio音频设置了自动播放，但是在ios的微信和safari下还是无法自动播放，无论是用h5的audio的标签还是用createjs里的sound...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/12/12/audio/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>12月 12, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/jquery/">jquery</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/11/05/jq_bgimage/">用jquery获取背景图片的路径的兼容问题</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+例如$(‘.lf-index’).css(“backgroundImage”)ios和macOS下返回url(
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/11/05/jq_bgimage/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>11月 05, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/jquery/">jquery</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/10/29/newimage/">new image ().onload的问题</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/10/29/newimage/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>10月 29, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/javascript/">javascript</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/10/02/newdate/">new Date()的兼容问题</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/10/02/newdate/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>10月 02, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/javascript/">javascript</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/09/08/fixed_dialog/">fixed定位的弹窗与虚拟键盘的兼容性问题</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/09/08/fixed_dialog/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>9月 08, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/兼容性/">兼容性</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/08/28/placeholder/">IE8 placeholder 不兼容的问题</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/08/28/placeholder/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>8月 28, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/兼容性/">兼容性</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/07/22/rgba_opacity/">rgba和opacity的区别</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            rgba和opacity均是css3方法，不支持ie8及其以下浏览器，网上有解决办法.
+
+透明度表示透明的程度...
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/07/22/rgba_opacity/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>7月 22, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/css/">css</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+        
+            
+                <!-- Paradox Thumbnail -->
+                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
+    <!-- Post Thumbnail -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+        
+    
+
+        <!-- Post Title -->
+        <p class="article-headline-p"><a href="/2016/06/28/button/">button标签的默认类型</a></p>
+    </div>
+
+    <!-- Post Excerpt -->
+    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
+        
+            表单中有一旦点击就会自动提交表单，因为标签的type属性默认为“submit”。要给
+        
+        &nbsp;&nbsp;&nbsp;
+        <span>
+            <a href="/2016/06/28/button/" target="_self">阅读全文</a>
+        </span>
+    </div>
+    <!-- Post_entry Info-->
+    <div id="post_entry-info">
+        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
+            <!-- Author Avatar -->
+            <div id="author-avatar">
+                <img src="/images/meavator.jpeg" width="44px" height="44px" alt="Jawesome's avatar">
+            </div>
+            <div>
+                <strong>Jawesome</strong>
+                <span>6月 28, 2016</span>
+            </div>
+        </div>
+        <div id="post_entry-right-info">
+            <!-- Category -->
+            <span class="post_entry-category">
+                <a class="post_category-link" href="/categories/html/">html</a>
+            </span>
+
+            
+
+            
+
+            <!-- Post Views -->
+            <span class="post_entry-views">
+            </span>
+        </div>
+    </div>
+</div>
+
+            
+            
+        
+    
+
+    
+    <!-- Index nav -->
+        <nav class="material-nav mdl-cell mdl-cell--12-col">
+            <a class="extend prev" rel="prev" href="/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
+        </nav>
+    
+
+    
+        <script type="text/ls-javascript" id="thumbnail-script">
+    var randomNum;
+
+    var locatePost = $('.locate-thumbnail-symbol').next();
+    for(var i = 0; i < 10; i++) {
+        randomNum = Math.floor(Math.random() * 19 + 1);
+
+        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+
+        locatePost = locatePost.next();
+    }
+</script>
+
+    
+</div>
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/images/meavator.jpeg" alt="Jawesome's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        jawesome@163.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/08/">八月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/css/">css<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/html/">html<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/categories/jquery/">jquery<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/vue/">vue<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/兼容性/">兼容性<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/工具/">工具<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/感想与总结/">感想与总结<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/gallery" title="映像">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                映像
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
 </ul>
-<table>
-<thead>
-<tr>
-<th>软件</th>
-<th>版本</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Git</td>
-<td>2.9+</td>
-<td></td>
-</tr>
-<tr>
-<td>Gitlab</td>
-<td></td>
-<td><a href="http://legitlab.letv.cn" target="_blank" rel="external">legitlab.letv.cn</a></td>
-</tr>
-<tr>
-<td>WebStorm/IDEA</td>
-<td>2016.2+</td>
-<td>图形化 Git 工具</td>
-</tr>
-</tbody>
-</table>
-<h3 id="0-3-角色"><a href="#0-3-角色" class="headerlink" title="0.3 角色"></a>0.3 角色</h3><table>
-<thead>
-<tr>
-<th>权限</th>
-<th>Developer(开发者)</th>
-<th>Master(管理员) &amp; Owner(所有者)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pull Project 代码</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>创建 merge request</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>创建 branch</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>push 代码到非保护分支</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>merge 和 push 代码到保护分支</td>
-<td></td>
-<td>✓</td>
-</tr>
-<tr>
-<td>为 Project 分配 Master 和 Developer 权限</td>
-<td></td>
-<td>✓</td>
-</tr>
-</tbody>
-</table>
-<p>Project 的角色可以从团队角色中继承而来，也可以由团队 Master（或 Owner ）单独提升开发者在某 Project 内的角色。</p>
-<h2 id="1-仓库"><a href="#1-仓库" class="headerlink" title="1 仓库"></a>1 仓库</h2><h3 id="1-1-Group"><a href="#1-1-Group" class="headerlink" title="1.1 Group"></a>1.1 Group</h3><p>Group 是 Project 主仓库的集合，地址: <a href="http://legitlab.letv.cn/groups/levp-membership-fe" target="_blank" rel="external">🚩levp-membership-fe</a></p>
-<h3 id="1-2-Project-主仓库"><a href="#1-2-Project-主仓库" class="headerlink" title="1.2 Project 主仓库"></a>1.2 Project 主仓库</h3><ul>
-<li>Project 主仓库是以工程为单位来划分的。</li>
-<li>Project 主仓库由团队 Master（或 Owner ）创建和维护。</li>
-</ul>
-<h2 id="2-分支"><a href="#2-分支" class="headerlink" title="2 分支"></a>2 分支</h2><p>Project 主仓库中仅含有1个 master 分支、1个 dev 分支和若干个 hotfix 分支，其中 master 分支和 dev 分支为保护分支。</p>
-<h3 id="2-1-master-分支"><a href="#2-1-master-分支" class="headerlink" title="2.1 master 分支"></a>2.1 master 分支</h3><ul>
-<li>master 分支由团队 Master（或 Owner ）创建和维护。</li>
-<li>master 分支上的代码版本须于生产环境保持一致，每个 commit 必须对应版本 Tag。</li>
-<li>master 分支关联至生产环境 CI 系统。</li>
-</ul>
-<h3 id="2-2-dev-分支"><a href="#2-2-dev-分支" class="headerlink" title="2.2 dev 分支"></a>2.2 dev 分支</h3><ul>
-<li>dev 分支由团队 Master（或 Owner ）创建和维护。</li>
-<li>dev 分支关联至测试环境 CI 系统。</li>
-</ul>
-<h3 id="2-3-hotfix-分支"><a href="#2-3-hotfix-分支" class="headerlink" title="2.3 hotfix 分支"></a>2.3 hotfix 分支</h3><ul>
-<li>hotfix 分支的名称由 “hotfix” + “-“ + “自定义名称” 组成。</li>
-<li>hotfix 分支由团队 Developer 或 Master（或 Owner ）创建和维护。</li>
-<li>hotfix 分支在被合并回 master 后要及时删除。</li>
-<li>hotfix 分支遵循谁创建谁维护谁删除的原则。</li>
-</ul>
-<h2 id="3-Fork-开发流程"><a href="#3-Fork-开发流程" class="headerlink" title="3 Fork 开发流程"></a>3 Fork 开发流程</h2><p>Fork 开发流程适用于正常的开发过程。</p>
-<h3 id="3-1-Fork"><a href="#3-1-Fork" class="headerlink" title="3.1 Fork"></a>3.1 Fork</h3><p>Developer 从主仓库 Fork 主仓库的 dev 分支至私有仓库，然后在自己的私有仓库进行新功能的开发或 Bug 的修复。</p>
-<h3 id="3-2-Merge-Request"><a href="#3-2-Merge-Request" class="headerlink" title="3.2 Merge Request"></a>3.2 Merge Request</h3><ul>
-<li>开发完成后，需要在 Gitlab 创建 Merge Request 申请合并私有仓库的某分支到 Project 主仓库的 dev 分支。</li>
-<li>有些时候，开发者在 Fork 代码后，创建 Merge Request 前，Project 主仓库可能已经接受了其他的 Merge Request，因此在合并前，开发者需要 pull Project 主仓库 dev 分支，到私有仓库需要合并的分支进行预合并。</li>
-<li>发起 Merge Request 时要有详尽的说明描述本次合并请求的目的。</li>
-<li>Merge Request 须指定给一名 Master（或 Owner ）做 Code Review 和 Merge，指定后须在自己的私有仓库给此 Master（或 Owner ）开放至少为 Developer 的角色权限。</li>
-</ul>
-<h3 id="3-3-Code-Review-amp-Merge"><a href="#3-3-Code-Review-amp-Merge" class="headerlink" title="3.3 Code Review &amp; Merge"></a>3.3 Code Review &amp; Merge</h3><p>Master（或 Owner ）按照研发规范对 Merge Request 进行代码审查，审查通过后合并至 dev 分支，审查不通过的需要驳回 Merge Request 并注明理由。</p>
-<h3 id="3-4-Release"><a href="#3-4-Release" class="headerlink" title="3.4 Release"></a>3.4 Release</h3><p>当新的版本需要对外发布时， Master（或 Owner ）需要将 dev 分支合并入 master 分支并用 Tag 标明版本。</p>
-<h2 id="4-Hotfix-开发流程"><a href="#4-Hotfix-开发流程" class="headerlink" title="4 Hotfix 开发流程"></a>4 Hotfix 开发流程</h2><p>Hotfix 开发流程适用于需要紧急修复线上 Bug 的情景，并作为 Fork 开发流程的补充。</p>
-<h3 id="4-1-New-Branch"><a href="#4-1-New-Branch" class="headerlink" title="4.1 New Branch"></a>4.1 New Branch</h3><ul>
-<li>当生产环境代码有急需修复的 Bug 时，从 master 分支新建 hotfix Branch。</li>
-<li>开发者在 hotfix 分支完成 Bug 的修复。</li>
-</ul>
-<h3 id="4-2-Merge-Request"><a href="#4-2-Merge-Request" class="headerlink" title="4.2 Merge Request"></a>4.2 Merge Request</h3><p>修复完成后开发者发起 Merge Request 申请合并 hotfix 分支到 master 分支。</p>
-<h3 id="4-3-Code-Review-amp-Merge-amp-Release"><a href="#4-3-Code-Review-amp-Merge-amp-Release" class="headerlink" title="4.3 Code Review &amp; Merge &amp; Release"></a>4.3 Code Review &amp; Merge &amp; Release</h3><ul>
-<li>Master（或 Owner ）按照研发规范对 Merge Request 进行代码审查，审查通过后合并至 master 分支，分支并用 Tag 标明版本，审查不通过的需要驳回 Merge Request 并注明理由。</li>
-<li>Master（或 Owner ）完成 master 的合并后，需要同时将 master 分支合并至 dev 分支，以保证修复 dev 分支上对应的 Bug。</li>
-</ul>
-<h3 id="4-4-删除分支"><a href="#4-4-删除分支" class="headerlink" title="4.4 删除分支"></a>4.4 删除分支</h3><p>当 hotfix 分支的合并被接受并完成发布后，创建者需要及时删除该分支。</p>
 
-      
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/08/git_qianduan/" data-id="cj4aza1ng000cj2s6y0vrl12e" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-audio" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/12/audio/" class="article-date">
-  <time datetime="2016-12-12T06:22:13.000Z" itemprop="datePublished">2016-12-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/12/audio/">audio音频在移动端无法自动播放的问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>audio音频设置了自动播放，但是在ios的微信和safari下还是无法自动播放，无论是用h5的audio的标签还是用createjs里的soundjs库都无法解决。处理办法一般是 设置自动播放属性，同时也监听触摸事件，因为是手机，所以人们会情不自禁的触摸屏幕，从而播放音乐，造成是自动播放的假象，提高了用户体验。</p>
-<p>```<br>document.addEventListener(‘touchstart’, function(){<br>   audio.play();<br>}, false);</p>
-<p>为了节省用户的流量，安卓跟ios都默认不允许开发者进行自动播放，除非用户进行页面操作，比较常用的方法，是在用户进行操作的时候，使用touch事件，控制音乐进行播放。如果在页面在微信中发布的话，可以用以下的方法尝试以下：</p>
-<pre><code>&lt;audio style=&quot;display:none; height: 0&quot; id=&quot;bg-music&quot; preload=&quot;auto&quot; src=&quot;../static/videos/bg-music.mp3&quot; loop=&quot;loop&quot;&gt;&lt;/audio&gt;
-
-
-document.addEventListener(&apos;DOMContentLoaded&apos;, function(){           function audioAutoPlay() {       
- var audio = document.getElementById(&apos;bg-music&apos;);           
- audio.play();        document.addEventListener(&quot;WeixinJSBridgeReady&quot;, function () {                audio.play();        
- }, false);   
-  }    
- audioAutoPlay();
- });
-</code></pre><p>监听DOMContentLoaded和load事件，实测在iPhone6s(ios10)、iPhone 6plus(ios8)中能顺利自动播放，没有测试全部iPhone的机型，估计iPhone是没问题的，安卓估计还是有部分不行，但是大部分机型能播放。我是讲上面两种方法结合起来，用户触摸的时候让音乐播放，监听微信的也播放，这是我能找到的比较完美的解决方案了，如果有更好的解决方案，欢迎提供交流。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/12/audio/" data-id="cj4aza1nd000aj2s6s4yv73jx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jq_bgimage" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/11/05/jq_bgimage/" class="article-date">
-  <time datetime="2016-11-05T07:09:42.000Z" itemprop="datePublished">2016-11-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/jq_bgimage/">用jquery获取背景图片的路径的兼容问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>例如$(‘.lf-index’).css(“backgroundImage”)<br>ios和macOS下返回url(<a href="http://i0.letvimg.com/images/bg.jpg" target="_blank" rel="external">http://i0.letvimg.com/images/bg.jpg</a> )<br>其余如安卓和windows的chrome下返回 url(“<a href="http://i0.letvimg.com/images/bg.jpg" target="_blank" rel="external">http://i0.letvimg.com/images/bg.jpg</a>“)</p>
-</blockquote>
-<p>代码如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">/*获取所有图片路径*/</div><div class="line">function imgUrlArr() &#123;</div><div class="line">    var imgList = [],</div><div class="line">        imgEle = $(&quot;.lantern-festival&quot;).find(&quot;img&quot;),</div><div class="line">        bgImgEle = $(&quot;.lantern-festival&quot;).find(&quot;.bgimg&quot;),</div><div class="line">        imgEleArr = [].slice.call(imgEle).concat([].slice.call(bgImgEle));</div><div class="line">   // imgEleArr = imgEle;</div><div class="line">    for(var i= 0,l=imgEleArr.length;i&lt;l; i++)&#123;</div><div class="line">        if($(imgEleArr[i]).attr(&quot;src&quot;)) &#123;</div><div class="line">            imgList.push($(imgEleArr[i]).attr(&quot;src&quot;).replace(&quot;http:&quot;,&quot;&quot;));</div><div class="line">        &#125;else if($(imgEleArr[i]).css(&quot;background&quot;)) &#123;</div><div class="line">            if($(imgEleArr[i]).css(&quot;backgroundImage&quot;).indexOf(&apos;url(&quot;&apos;) != -1) &#123;//其余如安卓和windows chrome下返回 url(&quot;http://i0.letvimg.com/images/bg.jpg&quot;)</div><div class="line">                var a = $(imgEleArr[i]).css(&quot;backgroundImage&quot;).replace(&apos;url(&apos;,&apos;&apos;).replace(&apos;)&apos;,&apos;&apos;)</div><div class="line">                a = a.substr(1,a.length-1);</div><div class="line">                a=a.substr(0,a.length-1)</div><div class="line">                imgList.push(a.replace(&quot;https:&quot;,&quot;&quot;).replace(&quot;http:&quot;,&quot;&quot;));</div><div class="line">            &#125;else if($(imgEleArr[i]).css(&quot;backgroundImage&quot;).indexOf(&apos;url(&apos;) != -1) &#123;//  ios下返回url(http://i0.letvimg.com/images/bg.jpg)</div><div class="line">                var a = $(imgEleArr[i]).css(&quot;backgroundImage&quot;).replace(&apos;url(&apos;,&apos;&apos;).replace(&apos;)&apos;,&apos;&apos;)</div><div class="line">                imgList.push(a.replace(&quot;https:&quot;,&quot;&quot;).replace(&quot;http:&quot;,&quot;&quot;));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> return imgList;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/11/05/jq_bgimage/" data-id="cj4aza1nr000ij2s6wgo19jfe" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-newimage" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/29/newimage/" class="article-date">
-  <time datetime="2016-10-29T06:29:42.000Z" itemprop="datePublished">2016-10-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/29/newimage/">new image ().onload的问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="loading-时用到的new-image-onload方法"><a href="#loading-时用到的new-image-onload方法" class="headerlink" title="loading 时用到的new image ().onload方法"></a>loading 时用到的new image ().onload方法</h4><p>new Image（）.onload方法有兼容性问题，图片有缓存后不同的浏览器会有不同的反应，有的会触发onload，有的则不会，具体可以上网查看。还有， src属性需要写在onload事件后面。如下</p>
-<pre><code>var image=new Image();
-imgae.onload = funtion;
-imgae.src = &apos;url&apos;
-</code></pre><p>因为js内部是按顺序逐行执行的，可以认为是同步的给imgae赋值src时，去加载图片这个过程是异步的，这个异步过程完成后，如果有onload，则执行onload<br>如果先赋值src，那么这个异步过程可能在你赋值onload之前就完成了（比如图片缓存，或者是js由于某些原因被阻塞了），那么onload就不会执行反之，js同步执行确定onload赋值完成后才会赋值src,可以保证这个异步过程在onload赋值完成后才开始进行，也就保证了onload一定会被执行到</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/29/newimage/" data-id="cj4aza1oc000xj2s6pbvaqa4r" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-newdate" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/02/newdate/" class="article-date">
-  <time datetime="2016-10-02T03:29:47.000Z" itemprop="datePublished">2016-10-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/02/newdate/">new Date()的兼容问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="new-Date-“2016-12-08-12-58-58”-有兼容性问题"><a href="#new-Date-“2016-12-08-12-58-58”-有兼容性问题" class="headerlink" title="new Date(“2016-12-08  12:58:58”)有兼容性问题"></a>new Date(“2016-12-08  12:58:58”)有兼容性问题</h4><blockquote>
-<p>ios下解析new Date(“2016-12-08  12:58:58”)有兼容性问题，将-替换成/</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/02/newdate/" data-id="cj4aza1o3000rj2s62id2cugf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-fixed_dialog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/08/fixed_dialog/" class="article-date">
-  <time datetime="2016-09-08T02:22:06.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/fixed_dialog/">fixed定位的弹窗与虚拟键盘的兼容性问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="ios下uc浏览器中fixed定位的弹窗与虚拟键盘的兼容性问题"><a href="#ios下uc浏览器中fixed定位的弹窗与虚拟键盘的兼容性问题" class="headerlink" title="ios下uc浏览器中fixed定位的弹窗与虚拟键盘的兼容性问题"></a>ios下uc浏览器中fixed定位的弹窗与虚拟键盘的兼容性问题</h4><p>弹窗中有input输入框，当输入框获得焦点时，虚拟键盘弹出。如果键盘遮挡住了弹窗，那么被遮挡的部分将会被键盘截去。所以移动端的有输入框的弹窗全部不能用fixed定位，用absolute定位代替。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/09/08/fixed_dialog/" data-id="cj4aza1n80009j2s6398piuwb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-placeholder" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/08/28/placeholder/" class="article-date">
-  <time datetime="2016-08-28T10:09:47.000Z" itemprop="datePublished">2016-08-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/28/placeholder/">IE8 placeholder 不兼容的问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="解决IE8-placeholder-不兼容的问题"><a href="#解决IE8-placeholder-不兼容的问题" class="headerlink" title="解决IE8 placeholder 不兼容的问题"></a>解决IE8 placeholder 不兼容的问题</h3><pre><code>jQuery(&apos;[placeholder]&apos;).focus(function() {
-     var input = jQuery(this);
-      if (input.val() == input.attr(&apos;placeholder&apos;)) {
-        input.val(&apos;&apos;);
-        input.removeClass(&apos;placeholder&apos;);
-      }
-    }).blur(function() {
-      var input = jQuery(this);
-      if (input.val() == &apos;&apos; || input.val() == input.attr(&apos;placeholder&apos;)) {
-        input.addClass(&apos;placeholder&apos;);
-        input.val(input.attr(&apos;placeholder&apos;));
-      }
-    }).blur().parents(&apos;form&apos;).submit(function() {
-      jQuery(this).find(&apos;[placeholder]&apos;).each(function() {
-        var input = jQuery(this);
-        if (input.val() == input.attr(&apos;placeholder&apos;)) {
-          input.val(&apos;&apos;);
-        }
-      })
-    });
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/28/placeholder/" data-id="cj4aza1o5000tj2s6tq00lsnj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IE8/">IE8</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-rgba_opacity" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/07/22/rgba_opacity/" class="article-date">
-  <time datetime="2016-07-22T02:09:09.000Z" itemprop="datePublished">2016-07-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/22/rgba_opacity/">rgba和opacity的区别</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>rgba和opacity均是css3方法，不支持ie8及其以下浏览器，网上有解决办法.</p>
-<blockquote>
-<p>透明度表示透明的程度，在开发过程中我们常说的透明度其实是不透明度，如果用0和1表示透明度的区间，一个完全透明的玻璃杯它的透明度（透明的程度）为1，不透明度为0，也就是alpha和opacity的值为0。<br>opacity会继承父元素的 opacity 属性，而RGBA设置的元素的后代元素不会继承不透明属性。可以理解为opacity有遗传性，rgba没有。</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/07/22/rgba_opacity/" data-id="cj4aza1oj0014j2s6bp713dod" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
-  </nav>
-</section>
-        
-          <aside id="sidebar">
-  
+    <!-- Sidebar Image -->
     
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE8/">IE8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-jQuery/">JavaScript jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery-vue-react/">jquery vue react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorm/">webstorm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/IE8/" style="font-size: 10px;">IE8</a> <a href="/tags/JavaScript-jQuery/" style="font-size: 10px;">JavaScript jQuery</a> <a href="/tags/css/" style="font-size: 13.33px;">css</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 16.67px;">jquery</a> <a href="/tags/jquery-vue-react/" style="font-size: 10px;">jquery vue react</a> <a href="/tags/vue/" style="font-size: 13.33px;">vue</a> <a href="/tags/webstorm/" style="font-size: 10px;">webstorm</a> <a href="/tags/移动端/" style="font-size: 13.33px;">移动端</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/06/24/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/18/jq_react_vue/">jquery与vue、react的区别</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/28/decimalpx/">小数像素问题</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/25/vue2_vue1/">vue2.0与1.0比较</a>
-          </li>
-        
-          <li>
-            <a href="/2017/04/25/vue2/">vue2.0笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 Jawesome<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/jinmawang" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>风中劲草
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
 
 
-<script src="/js/script.js"></script>
+                    <!-- Import File -->
 
-  </div>
-</body>
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
 </html>
