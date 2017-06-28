@@ -3,9 +3,12 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[js循环给li绑定事件实现 点击li弹出其索引值和内容]]></title>
       <url>/2017/06/28/lis_index/</url>
-      <content type="html"><![CDATA[<h5 id="js循环给li绑定事件实现-点击li弹出其索引值和内容"><a href="#js循环给li绑定事件实现-点击li弹出其索引值和内容" class="headerlink" title="js循环给li绑定事件实现 点击li弹出其索引值和内容"></a>js循环给li绑定事件实现 点击li弹出其索引值和内容</h5><p>html:</p>
+      <content type="html"><![CDATA[<blockquote>
+<p>最近面试遇到的一个问题，巩固下<br>好记性不如烂笔头 上代码</p>
+</blockquote>
+<p>html:</p>
 <pre><code>&lt;ul&gt;
 
 　　&lt;li&gt;香蕉&lt;/li&gt;
@@ -51,6 +54,18 @@ for(var i = 0; i&lt;itemli.length; i++){
     })
 </code></pre>]]></content>
       
+        <categories>
+            
+            <category> javascript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
         
     </entry>
     
