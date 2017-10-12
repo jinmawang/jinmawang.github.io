@@ -5,8 +5,7 @@
     <entry>
       <title></title>
       <url>/2017/10/12/vue_components_communication/</url>
-      <content type="html"><![CDATA[<p>###关于vuejs中的组件通信</p>
-<blockquote>
+      <content type="html"><![CDATA[<h3 id="关于vuejs中的组件通信"><a href="#关于vuejs中的组件通信" class="headerlink" title="关于vuejs中的组件通信"></a>关于vuejs中的组件通信</h3><blockquote>
 <p>在项目中经常会用到vue的组件通信，但是一直没总结下。今天稍微不那么忙，来总结下vue2.0中组件通信的方法，非vuex。</p>
 </blockquote>
 <p>vue中的组件通信方式可分为两大类，一类是父子组件通信，一类是兄弟组件通信。其中第一类又可分为父组件向子组件通信和子组件向父组件通信，关于这一类，vue官网如此描述：</p>
