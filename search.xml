@@ -3,6 +3,198 @@
   
     
     <entry>
+      <title></title>
+      <url>/2017/10/12/vue_components_communication/</url>
+      <content type="html"><![CDATA[<p>###关于vuejs中的组件通信</p>
+<blockquote>
+<p>在项目中经常会用到vue的组件通信，但是一直没总结下。今天稍微不那么忙，来总结下vue2.0中组件通信的方法，非vuex。</p>
+</blockquote>
+<p>vue中的组件通信方式可分为两大类，一类是父子组件通信，一类是兄弟组件通信。其中第一类又可分为父组件向子组件通信和子组件向父组件通信，关于这一类，vue官网如此描述：</p>
+<blockquote>
+<p>在 Vue 中，父子组件的关系可以总结为 prop 向下传递，事件向上传递。父组件通过 prop 给子组件下发数据，子组件通过自定义事件给父组件发送消息。</p>
+</blockquote>
+<p>父子组件通信的方法可以总结为“props down，events up”。关于兄弟组件通信的方法常用为eventBus,主要途径是在要相互通信的兄弟组件之中，都引入一个新的vue实例，然后通过分别调用这个实例的事件触发和监听来实现通信和参数传递。</p>
+<h4 id="1-父子通信之父传子"><a href="#1-父子通信之父传子" class="headerlink" title="1. 父子通信之父传子"></a>1. 父子通信之父传子</h4><p>在父组件使用子组件的地方绑定数据，然后在子组件中显式地用 props 选项声明它预期的数据。</p>
+<ul>
+<li><strong>静态数据</strong></li>
+</ul>
+<pre><code>/*父组件father.vue*/
+   //template
+    &lt;son1 msg1=&quot;fatherMessage&quot;&gt;&lt;/son1&gt;
+    //javascript
+    import son1 from &apos;./son1.vue&apos;
+    export default {
+      data() {
+          return {
+
+          }
+      },
+      components:{son1},
+    }
+
+/*子组件son1.vue*/
+  //template
+  &lt;h4&gt;我是子组件son1,这是父组件给我的消息--&gt; {{msg1}}&lt;/h4&gt;
+  //javascript
+   export default {
+        props:[&apos;msg1&apos;],
+      }
+</code></pre><ul>
+<li><p><strong>动态数据</strong></p>
+<pre><code> /*父组件father.vue*/
+    //template
+   &lt;son2 :msg2=&quot;fatherMessage&quot;&gt;&lt;/son2&gt;
+   //javascript
+  import son2 from &apos;./son2.vue&apos;
+    export default {
+      data() {
+          return {
+             fatherMessage:&quot;小儿子，喊你哥一起回家吃饭了&quot;,
+          }
+      },
+      components:{son2},
+    }
+
+/*子组件son2.vue*/
+ //template
+  &lt;h4&gt;我是子组件son2,这是父组件给我的消息--&gt; {{msg2}}&lt;/h4&gt;
+ //javascript
+  export default {
+       props:[&apos;msg2&apos;],
+     }
+</code></pre></li>
+</ul>
+<h4 id="2-父子通信之父调用子"><a href="#2-父子通信之父调用子" class="headerlink" title="2. 父子通信之父调用子"></a>2. 父子通信之父调用子</h4><p>利用ref将子组件挂载到父组件的$refs对象上。插一段vuejs官网关于ref的介绍</p>
+<blockquote>
+<p>ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 $refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例。</p>
+</blockquote>
+<pre><code>/*父组件father.vue*/
+  //template
+  &lt;button @click=&quot;son1SayHello&quot;&gt;让son1说&quot;hello&quot;&lt;/button&gt;
+  &lt;son1 ref=&quot;son1&quot;&gt;&lt;/son1
+  //javascript
+  import son1 from &apos;./son1.vue&apos;
+  import son2 from &apos;./son2.vue&apos;
+  export default {
+      data() {
+          return {
+
+          }
+      },
+      components:{son1,son2},
+      methods:{ 
+       son1SayHello() {
+         //通过在子组件上引用ref,从而获得子组件实例，进行相应操作。
+         this.$refs.son1.sayHello()
+       }
+      }
+  }
+
+/*子组件son1.vue*/
+  //template
+  //javascript  
+   export default {
+          data() {
+             return { 
+             }
+          },  
+        methods:{
+              sayHello() {
+                  alert(&quot;hello&quot;)
+              }
+        }
+    }
+</code></pre><h4 id="3-父子通信之子调用父"><a href="#3-父子通信之子调用父" class="headerlink" title="3. 父子通信之子调用父"></a>3. 父子通信之子调用父</h4><p>在子组件中利用$emit触发一个名为‘receiveSon2Message’的自定义事件，并将数据出去。然后在父组件中使用子组件的地方利用v-on绑定自定义事件‘receiveSon2Message’，并在自定义事件对应的方法里操作接收来的数据。</p>
+<pre><code>/*子组件son2.vue*/
+  //template
+   &lt;button @click=&quot;sendMessageToFather&quot;&gt;和爸爸说&quot;ok&quot;&lt;/button&gt;
+  //javascript
+   export default {
+        data() {
+          return {
+            son2MessageToFather:&quot;ok，爸爸！&quot;,
+          }
+        },
+        methods:{
+          sendMessageToFather() {
+            //利用自定义事件在子组件传递数据到父组件的流程
+            //点击子组件中的按钮（触发click事件）--&gt; 执行子组件方法sendMessageToFather --&gt; 通过$emit --&gt; 触发父组件receiveSon2Message事件并传递子组件的数据 --&gt; 执行父组件的showMessage方法
+            this.$emit(&apos;receiveSon2Message&apos;,this.son2MessageToFather)
+          },  
+        }
+ }
+
+/*父组件father.vue*/
+  //template
+   &lt;son2  @receiveSon2Message=&quot;showSon2Message&quot;&gt;&lt;/son2&gt;
+
+  //javascript  
+  import son1 from &apos;./son1.vue&apos;
+  import son2 from &apos;./son2.vue&apos;
+  export default {
+      data() {
+          return {
+              massageFromSon2:&apos;&apos;
+          }
+      },
+      components:{son1,son2},
+      methods:{
+        //最终点击子组件son2的&quot;和爸爸说ok&quot;按钮所执行的方法 son2Data是其传递过来的数据
+        showSon2Message(son2Data) {
+          console.log(son2Data);
+           this.massageFromSon2 = son2Data;
+        },        
+      }
+  }
+</code></pre><h4 id="3-兄弟通信"><a href="#3-兄弟通信" class="headerlink" title="3. 兄弟通信"></a>3. 兄弟通信</h4><p>利用eventBus,就是先创建一个bus.js，在这js里面使创建一个空的 Vue 实例作为中央事件总线</p>
+<pre><code>/*bus.js*/
+ import Vue from &apos;vue&apos;
+ export  default new Vue();
+</code></pre><p>  然后在需要通信的兄弟组件中引入bus.js  ，在主动通信的组件中用空vue实例的 $emit方法触发自定义事件并传递数据，在被动通信的组件中用空vue实例的$on方法监听自定义事件并接收数据。（下例中为son2组件向son1组件通信，son2为主动通信的组件）</p>
+<pre><code>/*兄弟组件son2.vue*/
+  //template
+   &lt;button @click=&quot;sendMessageToBrother&quot;&gt;喊哥哥回家吃饭&lt;/button&gt;
+  //javascript
+   import Bus from &apos;./bus.js&apos;
+   export default {
+        data() {
+          return {
+            son2MessageToBrother:&quot;哥，回家吃饭&quot;,
+          }
+        },
+        methods:{
+          sendMessageToBrother() {
+            Bus.$emit(&apos;jj&apos;, this.son2MessageToBrother);
+          }
+        }
+      } 
+
+
+/*兄弟组件son1.vue*/
+      //template
+       &lt;h4&gt;我是子组件son1,这是兄弟组件son2给我的消息--&gt; {{msgFromBrother}}&lt;/h4&gt;
+      //javascript
+      import Bus from &apos;./bus.js&apos;
+      export default {
+        data() {
+          return {
+            msgFromBrother:&apos;&apos;
+          }
+        },
+        created() {
+          var self = this;
+          Bus.$on(&apos;jj&apos;, function (data) {
+            console.log(data);
+            self.msgFromBrother = data;
+          });
+        },
+      }
+</code></pre>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[js循环给li绑定事件实现 点击li弹出其索引值和内容]]></title>
       <url>/2017/06/28/lis_index/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -84,23 +276,6 @@ for(var i = 0; i&lt;itemli.length; i++){
     </entry>
     
     <entry>
-      <title><![CDATA[不错的句子]]></title>
-      <url>/2017/06/24/aboutlove/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>看到的两段不错的关于感情的句子，收藏下</p>
-</blockquote>
-<h5 id="1-我们在不同的关系里进退、抽身或沉溺，享受温柔或甜蜜、也遭受等待和折磨。大多数人并没有强大到能够自主，大多数人只是默默接受命运的安排，遇见附赠的恋爱。"><a href="#1-我们在不同的关系里进退、抽身或沉溺，享受温柔或甜蜜、也遭受等待和折磨。大多数人并没有强大到能够自主，大多数人只是默默接受命运的安排，遇见附赠的恋爱。" class="headerlink" title="1.我们在不同的关系里进退、抽身或沉溺，享受温柔或甜蜜、也遭受等待和折磨。大多数人并没有强大到能够自主，大多数人只是默默接受命运的安排，遇见附赠的恋爱。"></a>1.我们在不同的关系里进退、抽身或沉溺，享受温柔或甜蜜、也遭受等待和折磨。大多数人并没有强大到能够自主，大多数人只是默默接受命运的安排，遇见附赠的恋爱。</h5><h5 id="2-恋爱和婚姻，意味着感情的孵化，而不是框定。正如英国作家毛姆在《月亮与六便士》里写道的，”感情有理智所根本无法理解的理由”。我们之所以会有”择一城终老，遇一人白首”的浪漫，之所以会有”终于在人群中遇见你”的感动，恰恰不是因为我们被限定在某个群体里、某个圈内，而是因为那个合适的人契合了你对于世界的认知，进而成为了你的全世界。"><a href="#2-恋爱和婚姻，意味着感情的孵化，而不是框定。正如英国作家毛姆在《月亮与六便士》里写道的，”感情有理智所根本无法理解的理由”。我们之所以会有”择一城终老，遇一人白首”的浪漫，之所以会有”终于在人群中遇见你”的感动，恰恰不是因为我们被限定在某个群体里、某个圈内，而是因为那个合适的人契合了你对于世界的认知，进而成为了你的全世界。" class="headerlink" title="2.恋爱和婚姻，意味着感情的孵化，而不是框定。正如英国作家毛姆在《月亮与六便士》里写道的，”感情有理智所根本无法理解的理由”。我们之所以会有”择一城终老，遇一人白首”的浪漫，之所以会有”终于在人群中遇见你”的感动，恰恰不是因为我们被限定在某个群体里、某个圈内，而是因为那个合适的人契合了你对于世界的认知，进而成为了你的全世界。"></a>2.恋爱和婚姻，意味着感情的孵化，而不是框定。正如英国作家毛姆在《月亮与六便士》里写道的，”感情有理智所根本无法理解的理由”。我们之所以会有”择一城终老，遇一人白首”的浪漫，之所以会有”终于在人群中遇见你”的感动，恰恰不是因为我们被限定在某个群体里、某个圈内，而是因为那个合适的人契合了你对于世界的认知，进而成为了你的全世界。</h5>]]></content>
-      
-        <categories>
-            
-            <category> 自说自话 </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[没有输过的木偶先生]]></title>
       <url>/2017/06/24/muou/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -147,6 +322,23 @@ for(var i = 0; i&lt;itemli.length; i++){
 <p> 他不置可否地点了根烟，笑笑：「是难受啊，不过随便她吧，我无所谓。」然后轻松地耸一耸肩。<br>     ——得说，那副洒脱劲儿，确实会让人真以为无所谓。</p>
 </blockquote>
 ]]></content>
+      
+        <categories>
+            
+            <category> 自说自话 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[不错的句子]]></title>
+      <url>/2017/06/24/aboutlove/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>看到的两段不错的关于感情的句子，收藏下</p>
+</blockquote>
+<h5 id="1-我们在不同的关系里进退、抽身或沉溺，享受温柔或甜蜜、也遭受等待和折磨。大多数人并没有强大到能够自主，大多数人只是默默接受命运的安排，遇见附赠的恋爱。"><a href="#1-我们在不同的关系里进退、抽身或沉溺，享受温柔或甜蜜、也遭受等待和折磨。大多数人并没有强大到能够自主，大多数人只是默默接受命运的安排，遇见附赠的恋爱。" class="headerlink" title="1.我们在不同的关系里进退、抽身或沉溺，享受温柔或甜蜜、也遭受等待和折磨。大多数人并没有强大到能够自主，大多数人只是默默接受命运的安排，遇见附赠的恋爱。"></a>1.我们在不同的关系里进退、抽身或沉溺，享受温柔或甜蜜、也遭受等待和折磨。大多数人并没有强大到能够自主，大多数人只是默默接受命运的安排，遇见附赠的恋爱。</h5><h5 id="2-恋爱和婚姻，意味着感情的孵化，而不是框定。正如英国作家毛姆在《月亮与六便士》里写道的，”感情有理智所根本无法理解的理由”。我们之所以会有”择一城终老，遇一人白首”的浪漫，之所以会有”终于在人群中遇见你”的感动，恰恰不是因为我们被限定在某个群体里、某个圈内，而是因为那个合适的人契合了你对于世界的认知，进而成为了你的全世界。"><a href="#2-恋爱和婚姻，意味着感情的孵化，而不是框定。正如英国作家毛姆在《月亮与六便士》里写道的，”感情有理智所根本无法理解的理由”。我们之所以会有”择一城终老，遇一人白首”的浪漫，之所以会有”终于在人群中遇见你”的感动，恰恰不是因为我们被限定在某个群体里、某个圈内，而是因为那个合适的人契合了你对于世界的认知，进而成为了你的全世界。" class="headerlink" title="2.恋爱和婚姻，意味着感情的孵化，而不是框定。正如英国作家毛姆在《月亮与六便士》里写道的，”感情有理智所根本无法理解的理由”。我们之所以会有”择一城终老，遇一人白首”的浪漫，之所以会有”终于在人群中遇见你”的感动，恰恰不是因为我们被限定在某个群体里、某个圈内，而是因为那个合适的人契合了你对于世界的认知，进而成为了你的全世界。"></a>2.恋爱和婚姻，意味着感情的孵化，而不是框定。正如英国作家毛姆在《月亮与六便士》里写道的，”感情有理智所根本无法理解的理由”。我们之所以会有”择一城终老，遇一人白首”的浪漫，之所以会有”终于在人群中遇见你”的感动，恰恰不是因为我们被限定在某个群体里、某个圈内，而是因为那个合适的人契合了你对于世界的认知，进而成为了你的全世界。</h5>]]></content>
       
         <categories>
             
@@ -1906,6 +2098,27 @@ if ($(elem).is(&quot;:checked&quot;))
     </entry>
     
     <entry>
+      <title><![CDATA[$(this).index()]]></title>
+      <url>/2016/06/23/$_index/</url>
+      <content type="html"><![CDATA[<p>$(this).index()获取的是该元素在<strong>兄弟元素</strong>中的索引    </p>
+]]></content>
+      
+        <categories>
+            
+            <category> jquery </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> jquery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[jquery中on和bind的区别]]></title>
       <url>/2016/06/23/on_bind/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -1931,30 +2144,9 @@ if ($(elem).is(&quot;:checked&quot;))
     </entry>
     
     <entry>
-      <title><![CDATA[$(this).index()]]></title>
-      <url>/2016/06/23/$_index/</url>
-      <content type="html"><![CDATA[<p>$(this).index()获取的是该元素在<strong>兄弟元素</strong>中的索引    </p>
-]]></content>
-      
-        <categories>
-            
-            <category> jquery </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> jquery </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[《少年维特之烦恼》（节选）]]></title>
       <url>/2014/04/24/weite/</url>
-      <content type="html"><![CDATA[<p>#####<br>在维特心中，深深种着烦恼和忧郁，这个根扎得越来越深，并且虬根交错，把他的身和心全部牢牢占据，彻底毁坏了维特精神的和谐宁静。内心的狂躁和激愤把他天赋中全部的本来力量摧残殆尽，后果相当坏，让他筋疲力竭。他曾徒然苦苦挣扎，只为摆脱这种恶劣的状态，比起以前和种种弊端斗争来，他更加胆怯、惶恐不安，这些都让维特所剩无几的精神力量、活泼天性、聪敏机智都消耗殆尽。从此，终日萦绕他的是悲伤和失望，他变得越来越悲惨，越来越蛮不讲理，于是，他更加不幸了。</p>
+      <content type="html"><![CDATA[<p>在维特心中，深深种着烦恼和忧郁，这个根扎得越来越深，并且虬根交错，把他的身和心全部牢牢占据，彻底毁坏了维特精神的和谐宁静。内心的狂躁和激愤把他天赋中全部的本来力量摧残殆尽，后果相当坏，让他筋疲力竭。他曾徒然苦苦挣扎，只为摆脱这种恶劣的状态，比起以前和种种弊端斗争来，他更加胆怯、惶恐不安，这些都让维特所剩无几的精神力量、活泼天性、聪敏机智都消耗殆尽。从此，终日萦绕他的是悲伤和失望，他变得越来越悲惨，越来越蛮不讲理，于是，他更加不幸了。</p>
 ]]></content>
       
         <categories>
